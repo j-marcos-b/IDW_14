@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="icon" href="public/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <header>
+        <a href="inicio.html"><img class="logo" src="public/logo.png" alt="logo IDW S.A"></a>
+        <nav class="menu">
+            <ul>
+                <li><a href="informacion.html">Información</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="#reservar">Reservar Turno</a></li>
+                <li><a href="#profecionales">Profecionales</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <div class="contact-info">
+                <div>
+                    <h3>Dirección</h3>
+                    <p>Av. Siempre Viva 742, Springfield</p>
+                </div>
+                <div>
+                    <h3>Teléfonos</h3>
+                    <p>+54 11 1234-5678</p>
+                    <p>+54 11 9876-5432 (Urgencias)</p>
+                </div>
+                <div>
+                    <h3>Email</h3>
+                    <p>info@clinicacidw.com</p>
+                </div>
+                <div>
+                    <h3>Horarios de atención</h3>
+                    <p>Lunes a Viernes: 8:00 a 20:00</p>
+                    <p>Sábados: 9:00 a 13:00</p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3>Envíanos un mensaje</h3>
+                <form>
+                    <div>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="asunto">Asunto:</label>
+                        <input type="text" id="asunto" name="asunto" required>
+                    </div>
+                    <div>
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Enviar mensaje</button>
+                </form>
+            </div>
+
+            <div class="map">
+                <h3>Ubicación</h3>
+                <!-- Aquí iría un mapa de Google Maps o similar -->
+                <div
+                    style="background: #eee; height: 300px; display: flex; align-items: center; justify-content: center;">
+                    Mapa de ubicación
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2025 - IDW S.A. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>
