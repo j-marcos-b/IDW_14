@@ -18,24 +18,24 @@
     list-style: none;
     text-decoration: none;
 }
-
 /* === CUERPO DE LA PÁGINA === */
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--color-background);
-    /* Fondo gris claro, suave y agradable para toda la página */
+    background-image: url('public/fachada.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Hace que el fondo no se mueva al scrollear */
+    color: var(--color-white); /* Texto blanco para que se lea sobre la imagen */
 }
 
-/* === HEADER (encabezado) === */
+/* === HEADER FIJO EN LA PARTE SUPERIOR === */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
 
-    /* Acá dejé el fondo completamente transparente */
-    /* Así, si en el futuro agregan una imagen de fondo, se verá */
-    /* Pero en esta página, como no hay imagen, el fondo es claro */
+    /* Acá dejé el fondo transparente para que se vea bien */
     background-color: transparent;
 
     /* Acá fijé el header arriba para que no se mueva al hacer scroll */
@@ -44,13 +44,13 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    /* Así siempre está visible y arriba de todo */
+    /* Así siempre está visible y encima de todo */
 }
 
 /* === LOGO EN EL HEADER === */
 .logo {
     width: 100px;
-    /* Acá puse 100px porque es un tamaño cómodo: ni muy grande ni muy chico */
+    /* Acá puse 100px porque es un tamaño cómodo */
     height: auto;
 }
 
@@ -64,9 +64,7 @@ header {
 /* === ENLACES DEL MENÚ === */
 li a {
     color: var(--color-primary);
-    /* Acá cambié a verde (no blanco) porque en esta página el fondo es claro */
-    /* Así se ve bien el texto del menú */
-
+    /* Acá usé el verde principal porque el fondo de esta página es claro */
     font-weight: bold;
     font-size: 1.2rem;
     padding: 10px 15px;
@@ -79,6 +77,14 @@ li a:hover {
     color: var(--color-primary-hover);
     /* Acá al pasar el mouse, cambia a un verde más claro */
     /* Así se nota que es un enlace interactivo */
+}
+
+/* === ESPACIO PARA QUE EL CONTENIDO NO SE ESCONDA DEBAJO DEL HEADER === */
+main {
+    /* Acá puse un margen arriba para que el contenido no quede tapado por el header fijo */
+    /* El header mide unos 60px de alto, entonces puse 80px para dejar espacio extra */
+    margin-top: 80px;
+    /* Así cuando scrolleás, todo el contenido se ve desde el principio */
 }
 
 /* === SECCIÓN DE CONTACTO === */
