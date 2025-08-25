@@ -1,14 +1,16 @@
+/* === COLORES GLOBALES (variables) === */
 :root {
-    --color-primary: #2C7873;      
-    --color-primary-hover: #6FB98F; 
-    --color-secondary: #004445;     
-    --color-accent: #15A1E8;        
-    --color-text: #555;           
-    --color-background: #f2f2f2;   
-    --color-card-bg: #f8f9fa;       
-    --color-white: #ffffff;       
+    --color-primary: #2C7873;        /* Verde principal (para botones y texto) */
+    --color-primary-hover: #6FB98F;  /* Verde más claro (para efectos de hover) */
+    --color-secondary: #004445;      /* Verde oscuro (usado en el footer) */
+    --color-accent: #15A1E8;         /* Azul para acentos (por si se usa después) */
+    --color-text: #555;              /* Gris oscuro (para texto general) */
+    --color-background: #f2f2f2;     /* Fondo claro de la página */
+    --color-card-bg: #f8f9fa;        /* Fondo muy claro para cajas y formularios */
+    --color-white: #ffffff;          /* Blanco puro */
 }
 
+/* === REINICIO BÁSICO DE ESTILOS === */
 * {
     margin: 0;
     padding: 0;
@@ -17,151 +19,199 @@
     text-decoration: none;
 }
 
+/* === CUERPO DE LA PÁGINA === */
 body {
     font-family: Arial, sans-serif;
     background-color: var(--color-background);
+    /* Fondo gris claro, suave y agradable para toda la página */
 }
 
+/* === HEADER (encabezado) === */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    background-color: var(--color-background);
+
+    /* Acá dejé el fondo completamente transparente */
+    /* Así, si en el futuro agregan una imagen de fondo, se verá */
+    /* Pero en esta página, como no hay imagen, el fondo es claro */
+    background-color: transparent;
+
+    /* Acá fijé el header arriba para que no se mueva al hacer scroll */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Así siempre está visible y arriba de todo */
 }
 
+/* === LOGO EN EL HEADER === */
 .logo {
     width: 100px;
+    /* Acá puse 100px porque es un tamaño cómodo: ni muy grande ni muy chico */
+    height: auto;
 }
 
+/* === MENÚ DE NAVEGACIÓN === */
 .menu ul {
-    list-style: none;
     display: flex;
     gap: 20px;
+    /* Acá separé los enlaces para que no estén pegados */
 }
 
+/* === ENLACES DEL MENÚ === */
 li a {
     color: var(--color-primary);
+    /* Acá cambié a verde (no blanco) porque en esta página el fondo es claro */
+    /* Así se ve bien el texto del menú */
+
     font-weight: bold;
     font-size: 1.2rem;
     padding: 10px 15px;
     border-radius: 5px;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
+    /* Acá puse una transición suave al pasar el mouse */
 }
 
 li a:hover {
     color: var(--color-primary-hover);
+    /* Acá al pasar el mouse, cambia a un verde más claro */
+    /* Así se nota que es un enlace interactivo */
 }
 
-.hero {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
+/* === SECCIÓN DE CONTACTO === */
+#contacto {
+    padding: 100px 20px 60px;
+    /* Acá puse 100px arriba para que no quede debajo del header fijo */
+    max-width: 1000px;
+    margin: 0 auto;
+    /* Acá centro el contenido */
 }
 
-.hero-image-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.fachada {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    filter: brightness(0.6);
-}
-
-.hero-text {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+#contacto h2 {
     text-align: center;
-    color: var(--color-white);
-    z-index: 2;
-    width: 80%;
-    max-width: 800px;
+    color: var(--color-primary);
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    font-weight: bold;
 }
 
-.hero-text h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
+/* === INFORMACIÓN DE CONTACTO === */
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.contact-info div {
+    background-color: var(--color-white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 220px;
+    min-width: 250px;
+    /* Acá hago que cada caja se ajuste en móviles */
+}
+
+.contact-info h3 {
+    color: var(--color-primary);
     margin-bottom: 10px;
-    color: var(--color-white);
+    font-size: 1.3rem;
 }
 
-.hero-text p {
-    font-size: 1.7rem;
+.contact-info p {
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* === FORMULARIO DE CONTACTO === */
+.contact-form {
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto 50px;
+}
+
+.contact-form h3 {
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.contact-form div {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    color: var(--color-text);
     font-weight: bold;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
-    margin: 0;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
 }
 
-.hero-button {
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    /* Acá permito que el usuario ajuste la altura si quiere */
+}
+
+.contact-form button {
     background-color: var(--color-primary);
     color: var(--color-white);
-    padding: 15px 30px;
+    padding: 12px 25px;
     border: none;
     border-radius: 5px;
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
-    z-index: 2;
+    width: 100%;
+    transition: background-color 0.3s ease;
 }
 
-.hero-button:hover {
+.contact-form button:hover {
     background-color: var(--color-primary-hover);
 }
 
-.features {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 60px 20px;
-    background-color: var(--color-white);
-}
-
-.feature {
+/* === MAPA DE UBICACIÓN === */
+.map {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
     text-align: center;
-    max-width: 300px;
-    padding: 30px;
-    border-radius: 10px;
-    background-color: var(--color-card-bg);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.feature:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-}
-
-.feature h3 {
+.map h3 {
     color: var(--color-primary);
-    font-size: 1.5rem;
     margin-bottom: 15px;
-    font-weight: bold;
+    font-size: 1.5rem;
 }
 
-.feature p {
-    color: var(--color-text);
-    line-height: 1.6;
-    font-size: 1rem;
-}
-
+/* === FOOTER (pie de página) === */
 .footer {
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0;
     background-color: var(--color-secondary);
+    /* Verde oscuro */
     color: var(--color-white);
     width: 100%;
+    /* Ocupa todo el ancho */
+    margin-top: 50px;
+    /* Un poco de espacio arriba */
 }
