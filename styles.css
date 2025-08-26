@@ -165,3 +165,43 @@ li a:hover {
     color: var(--color-white);
     width: 100%;
 }
+
+/* Estilos para informacion.html */
+#informacion {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 40px 20px;
+    background-color: var(--color-white);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#informacion h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+#informacion article {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: var(--color-card-bg);
+    border-left: 6px solid var(--color-primary);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#informacion h3 {
+    font-size: 1.5rem;
+    color: var(--color-secondary);
+    margin-bottom: 10px;
+}
+
+#informacion p {
+    color: var(--color-text);
+    line-height: 1.6;
+    font-size: 1rem;
+}  
+ 
