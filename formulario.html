@@ -3,5 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserva de Turno - Clínica IDW SA</title>
+    <title>Reserva de Turno - Clínica IDW S.A</title>
 </head>
+
+ <h1>Reserva de Turnos Médicos</h1>
+
+  <label for="especialidad">Especialidad:</label><br>
+    <select id="especialidad" name="especialidad" required>
+    <option value="">Seleccione una especialidad</option>
+    <option value="clinica">Clínica Médica</option>
+    <option value="cardiologia">Cardiología</option>
+    <option value="ginecologia">Ginecología</option>
+    <option value="traumatologia">Traumatología</option>
+    <option value="pediatria">Pediatría</option>
+    </select> 
+    <br><br>
+
+    <label for="medico">Médicos:</label><br>
+      <select id="medico" name="medico" required>
+      <option value="">Seleccione un médico</option>
+      <option value="dr_knee">Dr. Knee (Clínica Médica)</option>
+      <option value="dra_liguori">Dra. Liguori (Clínica Médica)</option>
+      <option value="dr_perez">Dr. Pérez (Cardiología)</option>
+      <option value="dra_otero">Dra. Otero (Cardiología)</option>
+      <option value="dr_bolivar">Dr. Bolivar (Ginecología)</option>
+      <option value="dra_sanchez">Dra. Sanchez (Ginecología)</option>
+      <option value="dr_piatti">Dr. Piatti (Traumatología)</option>
+      <option value="dra_porta">Dra. Porta (Traumatología)</option>
+      <option value="dr_camacho">Dr. Camacho (Pediatría)</option>
+      <option value="dra_martinez">Dra. Martínez (Pediatría)</option>
+    </select>
+    <br><br>
+
+    <label for="fecha">Fecha:</label><br>
+    <input type="date" id="fecha" name="fecha" required>
+    <br><br>
+
+    <label for="hora">Hora:</label><br>
+    <input type="time" id="hora" name="hora" required>
+    <br><br>
+
+     <label for="nombre">Nombre completo:</label><br>
+    <input type="text" id="nombre" name="nombre" required>
+    <br><br>
+
+    <label for="dni">DNI:</label><br>
+    <input type="text" id="dni" name="dni" required>
+    <br><br>
+    <label for="telefono">Telefono de Contacto</label><br><br>
+    <input type="tel" id="telefono" name="telefono" required><br><br>
+    <label for="email">Correo electrónico:</label><br><br>
+    <input type="email" id="email" name="email" required>
+    <br><br>
+
+    <button type="submit">Reservar Turno</button>
+  </form>
+
+  </body>
+</html>
