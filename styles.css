@@ -15,7 +15,6 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
-    font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -72,12 +71,12 @@ li a:hover {
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: brightness(0.5);
+    filter: brightness(0.6);
 }
 
 .hero-text {
     position: absolute;
-    top: 30%;
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -98,13 +97,13 @@ li a:hover {
 .hero-text p {
     font-size: 1.7rem;
     font-weight: bold;
-    text-shadow: 8px 8px 16px rgba(0, 0, 0, 0.8);
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
     margin: 0;
 }
 
 .hero-button {
     position: absolute;
-    bottom: 160px;
+    bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--color-primary);
@@ -117,8 +116,6 @@ li a:hover {
     cursor: pointer;
     transition: background-color 0.3s;
     z-index: 2;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
-
 }
 
 .hero-button:hover {
@@ -251,6 +248,23 @@ li a:hover {
     margin: 8px 0;
     color: #555;
     line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #informacion {
+    margin: 30px 12px;
+    padding: 24px 16px;
+  }
+
+  #informacion h2 {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+  }
+
+  #informacion h3 {
+    font-size: 1.25rem;
+  }
 }
 
 /* Formulario de contacto */
