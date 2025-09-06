@@ -558,3 +558,69 @@ li a:hover {
   }
 }
 
+/* Estilos para el formulario de reserva de turnos */
+
+/* --- FORMULARIO --- */
+h1 {
+  margin: 30px 0;
+  font-size: 2rem;
+  color: var(--color-secondary);
+}
+
+form {
+  display: inline-block;
+  background-color: var(--color-card-bg);
+  padding: 30px 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 15px;
+  color: var(--color-primary);
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Botón */
+button {
+  display: block;
+  margin: 25px auto 0 auto;
+  padding: 12px 25px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* --- FOOTER --- */
+.footer {
+  margin-top: 40px;
+  padding: 15px;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
