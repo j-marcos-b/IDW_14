@@ -466,3 +466,92 @@ li a:hover {
     height: 350px;
   }
 }
+/* Estilos para la sección de profesionales */
+#profesionales {
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
+  padding: 20px;
+  background: var(--color-card-bg);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(44, 120, 115, 0.08);
+}
+
+#profesionales h2 {
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: 32px;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+.medico {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  background: var(--color-white);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(44, 120, 115, 0.07);
+  padding: 24px;
+  margin-bottom: 28px;
+  transition: box-shadow 0.3s;
+}
+
+.medico:hover {
+  box-shadow: 0 4px 16px rgba(21, 161, 232, 0.12);
+}
+
+.imagen-medico {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--color-primary);
+  background: var(--color-background);
+  margin-right: 12px;
+}
+
+.medico h3 {
+  color: var(--color-secondary);
+  margin-bottom: 6px;
+  font-size: 1.3rem;
+}
+
+.medico .especialidad {
+  color: var(--color-accent);
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.medico .matricula,
+.medico .valor-consulta {
+  color: var(--color-primary);
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.medico .descripcion {
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.medico .obras-sociales {
+  color: var(--color-secondary);
+  font-size: 0.98rem;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 800px) {
+  #profesionales {
+    padding: 10px;
+  }
+  .medico {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 16px;
+  }
+  .imagen-medico {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
