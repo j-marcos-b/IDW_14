@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,85 +13,86 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-    <header>
-        <a href="inicio.html"><img id="logo" class="logo" src="public/logo.png" alt="logo IDW S.A"></a>
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-        <nav class="menu">
-            <ul>
-                <li><a href="informacion.html">Información</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="reservas.html">Reservar Turno</a></li>
-                <li><a href="profesionales.html">Profesionales</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <a href="inicio.html"><img id="logo" class="logo" src="public/logo.png" alt="logo IDW S.A"></a>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    <nav class="menu">
+        <ul>
+            <li><a href="informacion.html">Información</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="reservas.html">Reservar Turno</a></li>
+            <li><a href="profesionales.html">Profesionales</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
     <!--contenedor-->
     <div class="container">
 
- <h1>Reserva de Turnos Médicos</h1>
- <form> 
+        <h1>Reserva de Turnos Médicos</h1>
+        <form class="reserva_form">
 
-  <label for="especialidad">Especialidad:</label><br>
-    <select id="especialidad" name="especialidad" required>
-    <option value="">Seleccione una especialidad</option>
-    <option value="clinica">Clínica Médica</option>
-    <option value="cardiologia">Cardiología</option>
-    <option value="ginecologia">Ginecología</option>
-    <option value="traumatologia">Traumatología</option>
-    <option value="pediatria">Pediatría</option>
-    </select> 
-    <br><br>
+            <label for="especialidad">Especialidad:</label><br>
+            <select id="especialidad" name="especialidad" required>
+                <option value="">Seleccione una especialidad</option>
+                <option value="clinica">Clínica Médica</option>
+                <option value="cardiologia">Cardiología</option>
+                <option value="ginecologia">Ginecología</option>
+                <option value="traumatologia">Traumatología</option>
+                <option value="pediatria">Pediatría</option>
+            </select>
+            <br><br>
 
-    <label for="medico">Médicos:</label><br>
-      <select id="medico" name="medico" required>
-      <option value="">Seleccione un médico</option>
-      <option value="dr_knee">Dr. Knee (Clínica Médica)</option>
-      <option value="dra_liguori">Dra. Liguori (Clínica Médica)</option>
-      <option value="dr_perez">Dr. Pérez (Cardiología)</option>
-      <option value="dra_otero">Dra. Otero (Cardiología)</option>
-      <option value="dr_bolivar">Dr. Bolivar (Ginecología)</option>
-      <option value="dra_sanchez">Dra. Sanchez (Ginecología)</option>
-      <option value="dr_piatti">Dr. Piatti (Traumatología)</option>
-      <option value="dra_porta">Dra. Porta (Traumatología)</option>
-      <option value="dr_camacho">Dr. Camacho (Pediatría)</option>
-      <option value="dra_martinez">Dra. Martínez (Pediatría)</option>
-    </select>
-    <br><br>
+            <label for="medico">Médicos:</label><br>
+            <select id="medico" name="medico" required>
+                <option value="">Seleccione un médico</option>
+                <option value="dr_knee">Dr. Knee (Clínica Médica)</option>
+                <option value="dra_liguori">Dra. Liguori (Clínica Médica)</option>
+                <option value="dr_perez">Dr. Pérez (Cardiología)</option>
+                <option value="dra_otero">Dra. Otero (Cardiología)</option>
+                <option value="dr_bolivar">Dr. Bolivar (Ginecología)</option>
+                <option value="dra_sanchez">Dra. Sanchez (Ginecología)</option>
+                <option value="dr_piatti">Dr. Piatti (Traumatología)</option>
+                <option value="dra_porta">Dra. Porta (Traumatología)</option>
+                <option value="dr_camacho">Dr. Camacho (Pediatría)</option>
+                <option value="dra_martinez">Dra. Martínez (Pediatría)</option>
+            </select>
+            <br><br>
 
-    <label for="fecha">Fecha:</label><br>
-    <input type="date" id="fecha" name="fecha" required>
-    <br><br>
+            <label for="fecha">Fecha:</label><br>
+            <input type="date" id="fecha" name="fecha" required>
+            <br><br>
 
-    <label for="hora">Hora:</label><br>
-    <input type="time" id="hora" name="hora" required>
-    <br><br>
+            <label for="hora">Hora:</label><br>
+            <input type="time" id="hora" name="hora" required>
+            <br><br>
 
-     <label for="nombre">Nombre completo:</label><br>
-    <input type="text" id="nombre" name="nombre" required>
-    <br><br>
+            <label for="nombre">Nombre completo:</label><br>
+            <input type="text" id="nombre" name="nombre" required>
+            <br><br>
 
-    <label for="dni">DNI:</label><br>
-    <input type="text" id="dni" name="dni" required>
-    <br><br>
-    <label for="telefono">Telefono de Contacto</label><br><br>
-    <input type="tel" id="telefono" name="telefono" required><br><br>
-    <label for="email">Correo electrónico:</label><br><br>
-    <input type="email" id="email" name="email" required>
-    <br><br>
+            <label for="dni">DNI:</label><br>
+            <input type="text" id="dni" name="dni" required>
+            <br><br>
+            <label for="telefono">Telefono de Contacto</label><br><br>
+            <input type="tel" id="telefono" name="telefono" required><br><br>
+            <label for="email">Correo electrónico:</label><br><br>
+            <input type="email" id="email" name="email" required>
+            <br><br>
 
-    <button type="submit">Reservar Turno</button>
-  </form>
-
-   <footer class="footer">
-        <p>&copy; 2025 - IDW S.A. Todos los derechos reservados.</p>
-    </footer>
-
+            <button type="submit">Reservar Turno</button>
+        </form>
     </div>
     <!--fin contenedor-->
+    <footer class="footer">
+        <p>&copy; 2025 - IDW S.A. Todos los derechos reservados.</p>
+    </footer>
 </body>
+
 </html>

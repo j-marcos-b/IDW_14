@@ -193,78 +193,78 @@ li a:hover {
 }
 
 @media (max-width: 800px) {
-    header {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 10px 20px;
-    }
+  header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px;
+  }
 
-    .menu-icon {
-        display: block;
-        margin-left: auto;
-    }
+  .menu-icon {
+    display: block;
+    margin-left: auto;
+  }
 
-    .menu ul {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        display: none;
-        flex-direction: column;
-        background-color: var(--color-white);
-        border-radius: 5px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        padding: 10px 0;
-        z-index: 10;
-    }
+  .menu ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    background-color: var(--color-white);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    z-index: 10;
+  }
 
-    .menu ul li {
-        text-align: center;
-        margin: 5px 0;
-    }
+  .menu ul li {
+    text-align: center;
+    margin: 5px 0;
+  }
 
-    .menu ul li a {
-        display: block;
-        padding: 10px 20px;
-        color: var(--color-primary);
-        font-weight: bold;
-    }
+  .menu ul li a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--color-primary);
+    font-weight: bold;
+  }
 
-    .menu ul li a:hover {
-        background-color: var(--color-card-bg);
-        color: var(--color-primary-hover);
-    }
+  .menu ul li a:hover {
+    background-color: var(--color-card-bg);
+    color: var(--color-primary-hover);
+  }
 
-    #menu-toggle:checked ~ .menu ul {
-        display: flex;
-    }
+  #menu-toggle:checked ~ .menu ul {
+    display: flex;
+  }
 
-    #menu-toggle:checked ~ .menu-icon span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
+  #menu-toggle:checked ~ .menu-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
 
-    #menu-toggle:checked ~ .menu-icon span:nth-child(2) {
-        opacity: 0;
-    }
+  #menu-toggle:checked ~ .menu-icon span:nth-child(2) {
+    opacity: 0;
+  }
 
-    #menu-toggle:checked ~ .menu-icon span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
+  #menu-toggle:checked ~ .menu-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
 
-    .hero-text h1 {
-        font-size: 2rem;
-    }
+  .hero-text h1 {
+    font-size: 2rem;
+  }
 
-    .hero-text p {
-        font-size: 1.2rem;
-    }
+  .hero-text p {
+    font-size: 1.2rem;
+  }
 
-    .features {
-        flex-direction: column;
-        align-items: center;
-    }
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* Estilos para informacion.html */
@@ -493,6 +493,7 @@ li a:hover {
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(44, 120, 115, 0.07);
   padding: 24px;
+  margin: 20px;
   margin-bottom: 28px;
   transition: box-shadow 0.3s;
   text-align: center;
@@ -561,19 +562,28 @@ li a:hover {
 /* Estilos para el formulario de reserva de turnos */
 
 /* --- FORMULARIO --- */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+}
+
 h1 {
-  margin: 30px 0;
+  margin: 0 0 30px 0;
   font-size: 2rem;
   color: var(--color-secondary);
 }
 
-form {
-  display: inline-block;
+.reserva_form{
   background-color: var(--color-card-bg);
   padding: 30px 50px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  width: 60%;
+  min-width: 300px;
 }
 
 label {
@@ -583,7 +593,8 @@ label {
   color: var(--color-primary);
 }
 
-input, select {
+input,
+select {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
@@ -611,16 +622,3 @@ button:hover {
   background-color: var(--color-primary-hover);
 }
 
-/* --- FOOTER --- */
-.footer {
-  margin-top: 40px;
-  padding: 15px;
-  background-color: var(--color-secondary);
-  color: var(--color-white);
-
-  .contenedor {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
