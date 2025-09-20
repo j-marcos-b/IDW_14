@@ -23,18 +23,42 @@ body {
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
   background-color: var(--color-background);
   font-size: 1.2em;
+}
+
+.navbar-toggler {
+  margin: 0;
+}
+
+.navbar-toggler:hover {
+  background-color: transparent;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
 }
 
 #enlace {
   font-weight: bold;
   margin: 0 15px;
   color: var(--color-primary);
+}
+
+#enlace:hover {
+  color: var(--color-primary-hover);
+}
+
+.navbar-nav {
+  justify-self: center;
+}
+
+.navbar-collapse {
+  width: 100%;
+}
+
+.navbar-collapse a {
+  text-align: center;
 }
 
 .logo {
@@ -155,66 +179,6 @@ header {
 }
 
 @media (max-width: 800px) {
-  header {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px 20px;
-  }
-
-  .menu-icon {
-    display: block;
-    margin-left: auto;
-  }
-
-  .menu ul {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    display: none;
-    flex-direction: column;
-    background-color: var(--color-white);
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
-    z-index: 10;
-  }
-
-  .menu ul li {
-    text-align: center;
-    margin: 5px 0;
-  }
-
-  .menu ul li a {
-    display: block;
-    padding: 10px 20px;
-    color: var(--color-primary);
-    font-weight: bold;
-  }
-
-  .menu ul li a:hover {
-    background-color: var(--color-card-bg);
-    color: var(--color-primary-hover);
-  }
-
-  #menu-toggle:checked ~ .menu ul {
-    display: flex;
-  }
-
-  #menu-toggle:checked ~ .menu-icon span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-
-  #menu-toggle:checked ~ .menu-icon span:nth-child(2) {
-    opacity: 0;
-  }
-
-  #menu-toggle:checked ~ .menu-icon span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
-  }
-
   .hero-text h1 {
     font-size: 2rem;
   }
