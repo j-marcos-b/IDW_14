@@ -48,13 +48,16 @@
 
 <body>
     <!--contenedor-->
-    <div class="container">
+   <!--contenedor-->
 
-        <h1>Reserva de Turnos Médicos</h1>
-        <form class="reserva_form">
+<div class="container my-5">
 
-            <label for="especialidad">Especialidad:</label><br>
-            <select id="especialidad" name="especialidad" required>
+    <h1 class="mb-4">Reserva de Turnos Médicos</h1>
+    <form class="reserva_form row g-3">
+
+        <div class="col-md-6">
+            <label for="especialidad" class="form-label">Especialidad:</label>
+            <select id="especialidad" name="especialidad" class="form-select" required>
                 <option value="">Seleccione una especialidad</option>
                 <option value="clinica">Clínica Médica</option>
                 <option value="cardiologia">Cardiología</option>
@@ -62,10 +65,11 @@
                 <option value="traumatologia">Traumatología</option>
                 <option value="pediatria">Pediatría</option>
             </select>
-            <br><br>
+        </div>
 
-            <label for="medico">Médicos:</label><br>
-            <select id="medico" name="medico" required>
+        <div class="col-md-6">
+            <label for="medico" class="form-label">Médicos:</label>
+            <select id="medico" name="medico" class="form-select" required>
                 <option value="">Seleccione un médico</option>
                 <option value="dr_knee">Dr. Knee (Clínica Médica)</option>
                 <option value="dra_liguori">Dra. Liguori (Clínica Médica)</option>
@@ -78,32 +82,46 @@
                 <option value="dr_camacho">Dr. Camacho (Pediatría)</option>
                 <option value="dra_martinez">Dra. Martínez (Pediatría)</option>
             </select>
-            <br><br>
+        </div>
 
-            <label for="fecha">Fecha:</label><br>
-            <input type="date" id="fecha" name="fecha" required>
-            <br><br>
+        <div class="col-md-6">
+            <label for="fecha" class="form-label">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" class="form-control" required>
+        </div>
 
-            <label for="hora">Hora:</label><br>
-            <input type="time" id="hora" name="hora" required>
-            <br><br>
+        <div class="col-md-6">
+            <label for="hora" class="form-label">Hora:</label>
+            <input type="time" id="hora" name="hora" class="form-control" required>
+        </div>
 
-            <label for="nombre">Nombre completo:</label><br>
-            <input type="text" id="nombre" name="nombre" required>
-            <br><br>
+        <div class="col-md-6">
+            <label for="nombre" class="form-label">Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" required>
+        </div>
 
-            <label for="dni">DNI:</label><br>
-            <input type="text" id="dni" name="dni" required>
-            <br><br>
-            <label for="telefono">Telefono de Contacto</label><br><br>
-            <input type="tel" id="telefono" name="telefono" required><br><br>
-            <label for="email">Correo electrónico:</label><br><br>
-            <input type="email" id="email" name="email" required>
-            <br><br>
+        <div class="col-md-6">
+            <label for="dni" class="form-label">DNI:</label>
+            <input type="text" id="dni" name="dni" class="form-control" required>
+        </div>
 
-            <button type="submit">Reservar Turno</button>
-        </form>
-    </div>
+        <div class="col-md-6">
+            <label for="telefono" class="form-label">Teléfono de Contacto:</label>
+            <input type="tel" id="telefono" name="telefono" class="form-control" required>
+        </div>
+
+        <div class="col-md-6">
+            <label for="email" class="form-label">Correo electrónico:</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+
+        <div class="col-12 d-flex justify-content-center">
+           <button type="submit" class="btn btn-primary">Reservar Turno</button>  
+        </div>
+    </form>
+</div>
+
+    <!--fin contenedor-->
+
     <!--fin contenedor-->
     <footer class="footer">
         <p>&copy; 2025 - IDW S.A. Todos los derechos reservados.</p>
