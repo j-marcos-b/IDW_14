@@ -6,129 +6,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDW S.A</title>
     <link rel="icon" href="public/favicon.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.8/morph/bootstrap.min.css"
-        integrity="sha512-WNJfWY22WFbNJiO14ae1aIQUwHjbkYaXw5umKIwi8YzyGrwjIuv262hC/fnOKO4qlEU0ojnn+f4sFL+b12Gmbw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.8/morph/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<header>
-    <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
-        <div class="container-fluid d-flex justify-content-between">
-            <a class="navbar-brand" href="inicio.html">
-                <img id="logo" class="logo" src="public/logo.png" alt="logo IDW S.A">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
-                aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarColor03">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" id="enlace" href="informacion.html">Información</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="enlace" href="contacto.html">Contacto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="enlace" href="reservas.html">Reservar Turno</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="enlace" href="profesionales.html">Profesionales</a>
-                    </li>
-                </ul>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <a class="navbar-brand" href="inicio.html">
+                    <img id="logo" class="logo" src="public/logo.png" alt="logo IDW S.A">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
+                    aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarColor03">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="informacion.html">Información</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="reservas.html">Reservar Turno</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profesionales.html">Profesionales</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-8">
+                    <h1 class="mb-5 text-center fw-bold">Reserva de Turnos Médicos</h1>
+                    <form class="row g-4">
+                        <div class="col-md-6">
+                            <label for="especialidad" class="form-label">Especialidad:</label>
+                            <select id="especialidad" name="especialidad" class="form-select" required>
+                                <option value="">Seleccione una especialidad</option>
+                                <option value="clinica">Clínica Médica</option>
+                                <option value="cardiologia">Cardiología</option>
+                                <option value="ginecologia">Ginecología</option>
+                                <option value="traumatologia">Traumatología</option>
+                                <option value="pediatria">Pediatría</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="medico" class="form-label">Médicos:</label>
+                            <select id="medico" name="medico" class="form-select" required>
+                                <option value="">Seleccione un médico</option>
+                                <option value="dr_knee">Dr. Knee (Clínica Médica)</option>
+                                <option value="dra_liguori">Dra. Liguori (Clínica Médica)</option>
+                                <option value="dr_perez">Dr. Pérez (Cardiología)</option>
+                                <option value="dra_otero">Dra. Otero (Cardiología)</option>
+                                <option value="dr_bolivar">Dr. Bolivar (Ginecología)</option>
+                                <option value="dra_sanchez">Dra. Sanchez (Ginecología)</option>
+                                <option value="dr_piatti">Dr. Piatti (Traumatología)</option>
+                                <option value="dra_porta">Dra. Porta (Traumatología)</option>
+                                <option value="dr_camacho">Dr. Camacho (Pediatría)</option>
+                                <option value="dra_martinez">Dra. Martínez (Pediatría)</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="fecha" class="form-label">Fecha:</label>
+                            <input type="date" id="fecha" name="fecha" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="hora" class="form-label">Hora:</label>
+                            <input type="time" id="hora" name="hora" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="nombre" class="form-label">Nombre completo:</label>
+                            <input type="text" id="nombre" name="nombre" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="dni" class="form-label">DNI:</label>
+                            <input type="text" id="dni" name="dni" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="telefono" class="form-label">Teléfono de Contacto:</label>
+                            <input type="tel" id="telefono" name="telefono" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Correo electrónico:</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary px-5">Reservar Turno</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </nav>
-</header>
+    </main>
 
-<body>
-    <!--contenedor-->
-   <!--contenedor-->
-
-<div class="container my-5">
-
-    <h1 class="mb-4">Reserva de Turnos Médicos</h1>
-    <form class="reserva_form row g-3">
-
-        <div class="col-md-6">
-            <label for="especialidad" class="form-label">Especialidad:</label>
-            <select id="especialidad" name="especialidad" class="form-select" required>
-                <option value="">Seleccione una especialidad</option>
-                <option value="clinica">Clínica Médica</option>
-                <option value="cardiologia">Cardiología</option>
-                <option value="ginecologia">Ginecología</option>
-                <option value="traumatologia">Traumatología</option>
-                <option value="pediatria">Pediatría</option>
-            </select>
-        </div>
-
-        <div class="col-md-6">
-            <label for="medico" class="form-label">Médicos:</label>
-            <select id="medico" name="medico" class="form-select" required>
-                <option value="">Seleccione un médico</option>
-                <option value="dr_knee">Dr. Knee (Clínica Médica)</option>
-                <option value="dra_liguori">Dra. Liguori (Clínica Médica)</option>
-                <option value="dr_perez">Dr. Pérez (Cardiología)</option>
-                <option value="dra_otero">Dra. Otero (Cardiología)</option>
-                <option value="dr_bolivar">Dr. Bolivar (Ginecología)</option>
-                <option value="dra_sanchez">Dra. Sanchez (Ginecología)</option>
-                <option value="dr_piatti">Dr. Piatti (Traumatología)</option>
-                <option value="dra_porta">Dra. Porta (Traumatología)</option>
-                <option value="dr_camacho">Dr. Camacho (Pediatría)</option>
-                <option value="dra_martinez">Dra. Martínez (Pediatría)</option>
-            </select>
-        </div>
-
-        <div class="col-md-6">
-            <label for="fecha" class="form-label">Fecha:</label>
-            <input type="date" id="fecha" name="fecha" class="form-control" required>
-        </div>
-
-        <div class="col-md-6">
-            <label for="hora" class="form-label">Hora:</label>
-            <input type="time" id="hora" name="hora" class="form-control" required>
-        </div>
-
-        <div class="col-md-6">
-            <label for="nombre" class="form-label">Nombre completo:</label>
-            <input type="text" id="nombre" name="nombre" class="form-control" required>
-        </div>
-
-        <div class="col-md-6">
-            <label for="dni" class="form-label">DNI:</label>
-            <input type="text" id="dni" name="dni" class="form-control" required>
-        </div>
-
-        <div class="col-md-6">
-            <label for="telefono" class="form-label">Teléfono de Contacto:</label>
-            <input type="tel" id="telefono" name="telefono" class="form-control" required>
-        </div>
-
-        <div class="col-md-6">
-            <label for="email" class="form-label">Correo electrónico:</label>
-            <input type="email" id="email" name="email" class="form-control" required>
-        </div>
-
-        <div class="col-12 d-flex justify-content-center">
-           <button type="submit" class="btn btn-primary">Reservar Turno</button>  
-        </div>
-    </form>
-</div>
-
-    <!--fin contenedor-->
-
-    <!--fin contenedor-->
-    <footer class="footer">
-        <p>&copy; 2025 - IDW S.A. Todos los derechos reservados.</p>
+    <footer class="footer mt-5">
+        <p class="text-center">&copy; 2025 - IDW S.A. Todos los derechos reservados.</p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
+         
