@@ -9,7 +9,7 @@
   --color-white: #ffffff;
 }
 
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -494,13 +494,14 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 40px;
 }
 
 h1 {
   margin: 0 0 30px 0;
   font-size: 2rem;
   color: var(--color-secondary);
+  text-align: center;
+  text-align: center;
 }
 
 .reserva_form{
@@ -508,7 +509,8 @@ h1 {
   padding: 30px 50px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  width: 60%;
+  width: 80%;
+  width: 80%;
   min-width: 300px;
 }
 
@@ -547,4 +549,3 @@ button {
 button:hover {
   background-color: var(--color-primary-hover);
 }
-
