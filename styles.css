@@ -9,7 +9,7 @@
   --color-white: #ffffff;
 }
 
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -503,7 +503,7 @@ h1 {
   text-align: center;
 }
 
-.reserva_form{
+.reserva_form {
   background-color: var(--color-card-bg);
   padding: 30px 50px;
   border-radius: 10px;
@@ -547,4 +547,3 @@ button {
 button:hover {
   background-color: var(--color-primary-hover);
 }
-
