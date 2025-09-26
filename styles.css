@@ -203,6 +203,20 @@ header {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+#informacion article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  box-sizing: border-box;
+}
+
+/* Limpiar floats después de las imágenes */
+#informacion article::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 #informacion h2 {
   text-align: center;
   font-size: 2rem;
@@ -218,6 +232,7 @@ header {
   border-left: 6px solid var(--color-primary);
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
 #informacion h3 {
