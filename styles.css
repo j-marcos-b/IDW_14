@@ -408,7 +408,16 @@ header {
     min-width: auto;
   }
 
-  .contact-form,
+  .contact-form {
+    padding: 20px !important;
+    height: auto !important;
+  }
+
+  .contact-form textarea {
+    max-height: 150px;
+    resize: vertical;
+  }
+
   .map iframe {
     height: 350px;
   }
