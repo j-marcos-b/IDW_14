@@ -17,28 +17,37 @@
 </head>
 
 <header>
-    <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
-        <div class="container-fluid d-flex justify-content-between">
-            <a class="navbar-brand" href="inicio.html">
-                <img id="logo" class="logo" src="public/logo.png" alt="logo IDW S.A">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
-                aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="top-bar d-flex justify-content-around align-items-center px-3">
+        <a class="navbar-brand" href="inicio.html">
+            <img id="logo" class="logo" src="public/logo.png" alt="logo IDW S.A">
+        </a>
+        <div class="d-flex align-items-center">
+            <div class="contacto-info d-none d-lg-flex flex-column align-items-center justify-content-center me-3">
+                <span class="text-topbar">LLamanos al</span>
+                <span class="telefono">(011) 1234-5678</span>
+            </div>
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarColor03">
-                <ul class="navbar-nav">
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-light w-100" data-bs-theme="light">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse justify-content-center w-100" id="navbarColor03">
+                <ul class="navbar-nav w-100 d-flex justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link" id="enlace" href="informacion.html">Información</a>
+                        <a class="nav-link text-center" id="enlace" href="informacion.html">INFORMACIÓN</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="enlace" href="contacto.html">Contacto</a>
+                        <a class="nav-link text-center" id="enlace" href="contacto.html">CONTACTO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="enlace" href="reservas.html">Reservar Turno</a>
+                        <a class="nav-link text-center" id="enlace" href="reservas.html">RESERVAR TURNO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="enlace" href="profesionales.html">Profesionales</a>
+                        <a class="nav-link text-center" id="enlace" href="profesionales.html">PROFESIONALES</a>
                     </li>
                 </ul>
             </div>
@@ -48,74 +57,74 @@
 
 <body>
 
-<div class="container my-5">
-    <h1 class="mb-5">Reserva de Turnos Médicos</h1>
-    <form class="reserva_form row g-3">
+    <div class="container my-5">
+        <h1 class="mb-5">Reserva de Turnos Médicos</h1>
+        <form class="reserva_form row g-3">
 
-        <div class="col-md-6">
-            <label for="especialidad" class="form-label">Especialidad:</label>
-            <select id="especialidad" name="especialidad" class="form-select" required>
-                <option value="">Seleccione una especialidad</option>
-                <option value="clinica">Clínica Médica</option>
-                <option value="cardiologia">Cardiología</option>
-                <option value="ginecologia">Ginecología</option>
-                <option value="traumatologia">Traumatología</option>
-                <option value="pediatria">Pediatría</option>
-            </select>
-        </div>
+            <div class="col-md-6">
+                <label for="especialidad" class="form-label">Especialidad:</label>
+                <select id="especialidad" name="especialidad" class="form-select" required>
+                    <option value="">Seleccione una especialidad</option>
+                    <option value="clinica">Clínica Médica</option>
+                    <option value="cardiologia">Cardiología</option>
+                    <option value="ginecologia">Ginecología</option>
+                    <option value="traumatologia">Traumatología</option>
+                    <option value="pediatria">Pediatría</option>
+                </select>
+            </div>
 
-        <div class="col-md-6">
-            <label for="medico" class="form-label">Médicos:</label>
-            <select id="medico" name="medico" class="form-select" required>
-                <option value="">Seleccione un médico</option>
-                <option value="dr_knee">Dr. Knee (Clínica Médica)</option>
-                <option value="dra_liguori">Dra. Liguori (Clínica Médica)</option>
-                <option value="dr_perez">Dr. Pérez (Cardiología)</option>
-                <option value="dra_otero">Dra. Otero (Cardiología)</option>
-                <option value="dr_bolivar">Dr. Bolivar (Ginecología)</option>
-                <option value="dra_sanchez">Dra. Sanchez (Ginecología)</option>
-                <option value="dr_piatti">Dr. Piatti (Traumatología)</option>
-                <option value="dra_porta">Dra. Porta (Traumatología)</option>
-                <option value="dr_camacho">Dr. Camacho (Pediatría)</option>
-                <option value="dra_martinez">Dra. Martínez (Pediatría)</option>
-            </select>
-        </div>
+            <div class="col-md-6">
+                <label for="medico" class="form-label">Médicos:</label>
+                <select id="medico" name="medico" class="form-select" required>
+                    <option value="">Seleccione un médico</option>
+                    <option value="dr_knee">Dr. Knee (Clínica Médica)</option>
+                    <option value="dra_liguori">Dra. Liguori (Clínica Médica)</option>
+                    <option value="dr_perez">Dr. Pérez (Cardiología)</option>
+                    <option value="dra_otero">Dra. Otero (Cardiología)</option>
+                    <option value="dr_bolivar">Dr. Bolivar (Ginecología)</option>
+                    <option value="dra_sanchez">Dra. Sanchez (Ginecología)</option>
+                    <option value="dr_piatti">Dr. Piatti (Traumatología)</option>
+                    <option value="dra_porta">Dra. Porta (Traumatología)</option>
+                    <option value="dr_camacho">Dr. Camacho (Pediatría)</option>
+                    <option value="dra_martinez">Dra. Martínez (Pediatría)</option>
+                </select>
+            </div>
 
-        <div class="col-md-6">
-            <label for="fecha" class="form-label">Fecha:</label>
-            <input type="date" id="fecha" name="fecha" class="form-control" required>
-        </div>
+            <div class="col-md-6">
+                <label for="fecha" class="form-label">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" class="form-control" required>
+            </div>
 
-        <div class="col-md-6">
-            <label for="hora" class="form-label">Hora:</label>
-            <input type="time" id="hora" name="hora" class="form-control" required>
-        </div>
+            <div class="col-md-6">
+                <label for="hora" class="form-label">Hora:</label>
+                <input type="time" id="hora" name="hora" class="form-control" required>
+            </div>
 
-        <div class="col-md-6">
-            <label for="nombre" class="form-label">Nombre completo:</label>
-            <input type="text" id="nombre" name="nombre" class="form-control" required>
-        </div>
+            <div class="col-md-6">
+                <label for="nombre" class="form-label">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" required>
+            </div>
 
-        <div class="col-md-6">
-            <label for="dni" class="form-label">DNI:</label>
-            <input type="text" id="dni" name="dni" class="form-control" required>
-        </div>
+            <div class="col-md-6">
+                <label for="dni" class="form-label">DNI:</label>
+                <input type="text" id="dni" name="dni" class="form-control" required>
+            </div>
 
-        <div class="col-md-6">
-            <label for="telefono" class="form-label">Teléfono de Contacto:</label>
-            <input type="tel" id="telefono" name="telefono" class="form-control" required>
-        </div>
+            <div class="col-md-6">
+                <label for="telefono" class="form-label">Teléfono de Contacto:</label>
+                <input type="tel" id="telefono" name="telefono" class="form-control" required>
+            </div>
 
-        <div class="col-md-6">
-            <label for="email" class="form-label">Correo electrónico:</label>
-            <input type="email" id="email" name="email" class="form-control" required>
-        </div>
+            <div class="col-md-6">
+                <label for="email" class="form-label">Correo electrónico:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
 
-        <div class="col-12 d-flex justify-content-center">
-           <button type="submit" class="btn btn-primary">Reservar Turno</button>  
-        </div>
-    </form>
-</div>
+            <div class="col-12 d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary">Reservar Turno</button>
+            </div>
+        </form>
+    </div>
     <footer class="footer">
         <p>&copy; 2025 - IDW S.A. Todos los derechos reservados.</p>
     </footer>

@@ -18,7 +18,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: var(--color-background);
 }
 
@@ -29,6 +29,12 @@ header {
   width: 100%;
   top: 0;
   z-index: 1000;
+}
+
+.contacto-info {
+  color:  var(--color-primary);
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
 .navbar-toggler {
@@ -43,10 +49,13 @@ header {
   box-shadow: none;
 }
 
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%232c7873' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
 #enlace {
-  font-weight: bold;
   margin: 0 15px;
-  color: var(--color-primary);
+  color: var(--color-white);
 }
 
 #enlace:hover {
@@ -54,19 +63,26 @@ header {
 }
 
 .navbar-nav {
-  justify-self: center;
+  background-color: var(--color-secondary);
+  padding: 0;
+  margin: 0;
+}
+
+.navbar .container-fluid {
+  padding: 0;
+}
+
+.navbar {
+  padding: 0;
 }
 
 .navbar-collapse {
-  width: 100%;
-}
-
-.navbar-collapse a {
-  text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
 .logo {
-  width: 100px;
+  width: 150px;
 }
 
 .hero {
@@ -201,7 +217,7 @@ header {
 /* Estilos para informacion.html */
 #informacion {
   max-width: 1000px;
-  margin: 140px auto;
+  margin: 220px auto;
   padding: 40px 20px;
   background-color: var(--color-white);
   border-radius: 10px;
@@ -255,7 +271,7 @@ header {
 /* Estilo para la sección de contacto */
 #contacto {
   max-width: 1200px;
-  margin: 140px auto;
+  margin: 220px auto;
   padding: 20px;
 }
 
@@ -425,7 +441,7 @@ header {
 /* Estilos para la sección de profesionales */
 #profesionales {
   max-width: 1200px;
-  margin: 160px auto 0 auto;
+  margin: 220px auto 0 auto;
   padding: 20px;
   background: var(--color-card-bg);
   border-radius: 16px;
@@ -526,7 +542,7 @@ header {
 }
 
 h1 {
-  margin: 120px 0 30px 0;
+  margin: 200px 0 30px 0;
   font-size: 2rem;
   color: var(--color-secondary);
   text-align: center;
