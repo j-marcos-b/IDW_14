@@ -540,6 +540,20 @@ header {
   margin-bottom: 4px;
 }
 
+.card-img {
+  width: 100px;
+  height: 140px;
+  object-fit: cover;
+}
+
+.card-title {
+  color: var(--color-secondary) !important;
+}
+
+.card .small {
+  color: var(--color-secondary) !important;
+}
+
 @media (max-width: 800px) {
   #profesionales {
     padding: 10px;
