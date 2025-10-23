@@ -32,9 +32,9 @@ function actualizarTabla(){
             <td>${medico.email}</td>
             <td>
                 <div class="btn-group" role="group" aria-label="Acciones">
-                    <button class="btn btn-sm" data-index="${index}">Editar</button>
-                    <button class="btn btn-sm" data-index="${index}">Eliminar</button>
-                    <button class="btn btn-sm" data-index="${index}">Ver</button>
+                    <button class="btn btn-sm btn-editar" data-index="${index}">Editar</button>
+                    <button class="btn btn-sm btn-eliminar" data-index="${index}">Eliminar</button>
+                    <button class="btn btn-sm btn-visualizar" data-index="${index}">Ver</button>
                 </div>
             </td>
         `;
