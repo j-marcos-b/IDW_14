@@ -50,7 +50,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-center" id="enlace" href="profesionales.html">PROFESIONALES</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" id="nav-auth-item">
                             <a class="nav-link text-center" id="enlace" href="login.html">LOGIN</a>
                         </li>
                     </ul>
@@ -61,117 +61,8 @@
     <main>
         <section id="profesionales">
             <h2 style="color: var(--color-secondary)">Profesionales</h2>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-
-                <div class="col">
-                    <div class="card h-100 shadow-sm border-0 p-4 text-center">
-                        <img src="public/im9.jpg" alt="Imagen del Dr. Bolívar" class="card-img rounded-circle border border-3 mb-3 mx-auto d-block">
-                        <h5 class="card-title">Dr. Bolívar, Héctor Ignacio</h5>
-                        <p class="text-primary fw-bold mb-1">Ginecología</p>
-                        <p class="text-muted mb-1">Matrícula: 50850</p>
-                        <p class="text-body mb-1">El Dr. Bolívar es un profesional experimentado, especializado en atención ginecológica general.</p>
-                        <p class="small">Obras Sociales: Galeno, Luis Pasteur, OSDE</p>
-                    </div>
-                </div>
-
-            <div class="col" id="col">
-                    <div class="card h-100 shadow-sm border-0 p-4 text-center">
-                        <img src="public/im5.jpg" alt="Imagen del Dr. Camacho" class="card-img rounded-circle border border-3 mb-3 mx-auto d-block">
-                        <h5 class="card-title" style="color: var(--color-secondary)">Dr. Camacho, Cristóbal</h5>
-                        <p class="text-primary fw-bold mb-1">Pediatría</p>
-                        <p class="text-muted mb-1">Matrícula: 63861</p>
-                        <p class="text-body mb-1">El Dr. Camacho es un médico especializado en atención pediátrica a niños desde el nacimiento hasta la adolescencia.</p>
-                        <p class="small">Obras Sociales: Apres, OSECAC, OSPERA, OSPLAD</p>
-                    </div>
-                </div>
-
-            <div class="col">
-                    <div class="card h-100 shadow-sm border-0 p-4 text-center">
-                        <img src="public/im7.jpg" alt="Imagen del Dr. Knee" class="card-img rounded-circle border border-3 mb-3 mx-auto d-block">
-                        <h5 class="card-title" style="color: var(--color-secondary)">Dr. Knee, Hernán</h5>
-                        <p class="text-primary fw-bold mb-1">Clínica Médica</p>
-                        <p class="text-muted mb-1">Matrícula: 45713</p>
-                        <p class="text-body mb-1">El Dr. Knee es un profesional con amplia experiencia, especializado en medicina clínica integral para adultos.</p>
-                        <p class="small">Obras Sociales: Galeno, Medicus, Omint, Swiss Medical</p>
-                    </div>
-                </div>
-
-            <div class="col">
-                    <div class="card h-100 shadow-sm border-0 p-4 text-center">
-                        <img src="public/im1.jpg" alt="Imagen del Dra. Liguori" class="card-img rounded-circle border border-3 mb-3 mx-auto d-block">
-                        <h5 class="card-title" style="color: var(--color-secondary)">Dra. Liguori, Martina</h5>
-                        <p class="text-primary fw-bold mb-1">Clínica Médica</p>
-                        <p class="text-muted mb-1">Matrícula: 57143</p>
-                        <p class="text-body mb-1">La Dra. Liguori es una médica especialista en diagnóstico y tratamiento de enfermedades en pacientes adultos.</p>
-                        <p class="small">Obras Sociales: Galeno, IOMA, Medifé, OSPe, PAMI</p>
-                    </div>
-                </div>
-
-            <div class="col">
-                    <div class="card h-100 shadow-sm border-0 p-4 text-center">
-                        <img src="public/im2.jpg" alt="Imagen del Dra. Martínez" class="card-img rounded-circle border border-3 mb-3 mx-auto d-block">
-                        <h5 class="card-title" style="color: var(--color-secondary)">Dra. Martínez, Ernestina</h5>
-                        <p class="text-primary fw-bold mb-1">Pediatría</p>
-                        <p class="text-muted mb-1">Matrícula: 55048</p>
-                        <p class="text-body mb-1">La Dra. Martínez es una médica experimentada en tratamiento de enfermedades pediátricas.</p>
-                        <p class="small">Obras Sociales: Apres, Medifé, Omint, Swiss Medical, UPCN</p>
-                    </div>
-                </div>
-
-            <div class="col">
-                    <div class="card h-100 shadow-sm border-0 p-4 text-center">
-                        <img src="public/im3.jpg" alt="Imagen del Dra. Otero" class="card-img rounded-circle border border-3 mb-3 mx-auto d-block">
-                        <h5 class="card-title" style="color: var(--color-secondary)">Dra. Otero, Hortensia</h5>
-                        <p class="text-primary fw-bold mb-1">Cardiología</p>
-                        <p class="text-muted mb-1">Matrícula: 34704</p>
-                        <p class="text-body mb-1">La Dra. Otero es una profesional con especialización en diagnóstico y tratamiento de enfermedades cardiovasculares.</p>
-                        <p class="small">Obras Sociales: Apres, IOMA, OSPERA, OSECAC, PAMI</p>
-                    </div>
-                </div>
-
-            <div class="col">
-                    <div class="card h-100 shadow-sm border-0 p-4 text-center">
-                        <img src="public/im6.jpg" alt="Imagen del Dr. Pérez" class="card-img rounded-circle border border-3 mb-3 mx-auto d-block">
-                        <h5 class="card-title" style="color: var(--color-secondary)">Dr. Pérez, Luis</h5>
-                        <p class="text-primary fw-bold mb-1">Cardiología</p>
-                        <p class="text-muted mb-1">Matrícula: 11773</p>
-                        <p class="text-body mb-1">El Dr. Pérez es un especialista en evaluación, prevención y tratamiento de trastornos cardíacos.</p>
-                        <p class="small">Obras Sociales: Medicus, Medifé, Omint, OSECAC, OSPe, UPCN</p>
-                    </div>
-                </div>
-
-            <div class="col">
-                    <div class="card h-100 shadow-sm border-0 p-4 text-center">
-                        <img src="public/im8.jpg" alt="Imagen del Dra. Piatti" class="card-img rounded-circle border border-3 mb-3 mx-auto d-block">
-                        <h5 class="card-title" style="color: var(--color-secondary)">Dra. Piatti, Marcela</h5>
-                        <p class="text-primary fw-bold mb-1">Traumatología</p>
-                        <p class="text-muted mb-1">Matrícula: 77354</p>
-                        <p class="text-body mb-1">La Dra. Piatti es una profesional en el tratamiento de lesiones del sistema musculoesquelético.</p>
-                        <p class="small">Obras Sociales: Medifé, OSPERA, OSPLAD, PAMI, Swiss Medical</p>
-                    </div>
-                </div>
-
-            <div class="col">
-                    <div class="card h-100 shadow-sm border-0 p-4 text-center">
-                        <img src="public/im10.jpg" alt="Imagen del Dra. Porta" class="card-img rounded-circle border border-3 mb-3 mx-auto d-block">
-                        <h5 class="card-title" style="color: var(--color-secondary)">Dra. Porta, Luisina</h5>
-                        <p class="text-primary fw-bold mb-1">Traumatología</p>
-                        <p class="text-muted mb-1">Matrícula: 08364</p>
-                        <p class="text-body mb-1">La Dra. Porta es una médica traumatóloga que brinda atención para la recuperación funcional.</p>
-                        <p class="small">Obras Sociales: Galeno, IOMA, Luis Pasteur, OSPLAD, UPCN</p>
-                    </div>
-                </div>
-
-            <div class="col">
-                    <div class="card h-100 shadow-sm border-0 p-4 text-center">
-                        <img src="public/im4.jpg" alt="Imagen del Dra. Sánchez" class="card-img rounded-circle border border-3 mb-3 mx-auto d-block">
-                        <h5 class="card-title" style="color: var(--color-secondary)">Dra. Sánchez, Julia</h5>
-                        <p class="text-primary fw-bold mb-1">Ginecología</p>
-                        <p class="text-muted mb-1">Matrícula: 12936</p>
-                        <p class="text-body mb-1">La Dra. Sánchez es una médica ginecóloga con una amplia experiencia dedicada al cuidado de la salud femenina.</p>
-                        <p class="small">Obras Sociales: Apres, Galeno, Medifé, OSECAC, PAMI, Swiss Medical</p>
-                    </div>
-                </div>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="contenedorProfesionales"> 
+            </div>
         </section>
    
     </main>
@@ -181,6 +72,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <script src="config/autorizacion.js"></script>
+    <script type="module" src="js/profesionales.js"></script>
 </body>
 
 </html>

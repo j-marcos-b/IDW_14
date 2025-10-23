@@ -25,10 +25,6 @@
                 <img id="logo" class="logo" src="public/logo.png" alt="logo IDW S.A">
             </a>
             <div class="d-flex align-items-center">
-                <div class="contacto-info d-none d-lg-flex flex-column align-items-center justify-content-center me-3">
-                    <span class="text-topbar">LLamanos al</span>
-                    <span class="telefono">(011) 1234-5678</span>
-                </div>
                 <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -52,7 +48,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-center" id="enlace" href="profesionales.html">PROFESIONALES</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" id="nav-auth-item">
                             <a class="nav-link text-center" id="enlace" href="login.html">LOGIN</a>
                         </li>
                     </ul>
@@ -61,7 +57,7 @@
         </nav>
     </header>
 
-<main class="container">
+<main class="container py-5">
     <section class="container-fluid">
         <h1 class=" mb-3">Alta Médico</h1>
         <form id="altaMedicosForm">
@@ -83,7 +79,7 @@
             </div> 
             <div class="mb-3">   
                 <label for="telefono">Teléfono:</label>
-                <input type="tel" id="telefono" placeholder="Ingrese telefono"><br><br>
+                <input type="tel" id="telefono" placeholder="Ingrese telefono" required><br><br>
             </div>
             <div class=" mb-3">
                 <label for="email">Email:</label>
@@ -94,36 +90,36 @@
           
             <br><br>
         </form>
-    </section>
-<section>
-            <h3 class="mb-3">Listado de Médicos</h3>
-            <div class="table-responsive">
-                <table class="table table-bordered align-middle" id="listadoMedicos">
-                    <thead class="table-primary">
-                        <tr>
-                            <th>Nombre Completo</th>
-                            <th>Matrícula</th>
-                            <th>Especialidad</th>
-                            <th>Obras Sociales</th>
-                            <th>Teléfono</th>
-                            <th>Email</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                       
-                    </tbody>
-                </table>
-            </div>
-        </section>
+</section>
+<section class="container-fluid mt-5">
+    <h3 class="mb-3 text-center">Listado de Médicos</h3>
+    <div class="table-responsive">
+        <table class="table table-hover table-secondary table-bordered" id="listadoMedicos">
+             <thead class="table-success">
+                 <tr>
+                    <th>Nombre Completo</th>
+                    <th>Matrícula</th>
+                    <th>Especialidad</th>
+                    <th>Obras Sociales</th>
+                    <th>Teléfono</th>
+                    <th>Email</th>
+                    <th></th>
+                    </tr>
+            </thead>
+                <tbody>
+            </tbody>
+        </table>
+    </div>
+</section>
 
 </main>
 <footer class="footer">
         <p>&copy; 2025 - IDW S.A. Todos los derechos reservados.</p>
-    </footer>
+</footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-    <script src="js/altaMedicos.js"></script>
+    <script src="config/autorizacion.js"></script> 
+    <script type="module" src="js/altaMedicos.js"></script> 
 </body>
-
 </html>

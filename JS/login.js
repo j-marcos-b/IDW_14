@@ -23,9 +23,9 @@ formLogin.addEventListener('submit', function(event){
     if(isUsuario){
         sessionStorage.setItem("usuarioLogueado", usuarioInput);
         mostrarMensaje('Bienvenido Usuario', "success");
-        window.location.href = "formAltamedicos.html";
+        window.location.href = "formAltaMedicos.html";
         
     } else {
-        mostrarMensaje('Error en credenciales', "danger")
+        mostrarMensaje('Acceso inválido. Intente nuevamente.', "danger")
     }
 })
