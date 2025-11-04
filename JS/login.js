@@ -10,22 +10,45 @@ function mostrarMensaje(texto, tipo){
             </div>`;
 }
 
-formLogin.addEventListener('submit', function(event){
+formLogin.addEventListener('submit', async function(event){
     event.preventDefault();
 
     let usuarioInput = usuario.value.trim();
     let claveInput = clave.value.trim();
+    let rolInput = document.getElementById('rol').value;
 
-    const isUsuario = usuarios.find(
-        u => u.usuario === usuarioInput && u.clave === claveInput
-    );
+    if (!usuarioInput || !claveInput) {
+        mostrarMensaje('Todos los campos son requeridos.', "danger");
+        return;
+    }
 
-    if(isUsuario){
-        sessionStorage.setItem("usuarioLogueado", usuarioInput);
-        mostrarMensaje('Bienvenido Usuario', "success");
-        window.location.href = "formAltaMedicos.html";
-        
-    } else {
-        mostrarMensaje('Acceso inválido. Intente nuevamente.', "danger")
+    try {
+        const response = await fetch('https://dummyjson.com/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: usuarioInput,
+                password: claveInput
+            })
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            sessionStorage.setItem("accessToken", data.token);
+            sessionStorage.setItem("usuarioLogueado", usuarioInput);
+            sessionStorage.setItem("userRole", rolInput);
+            mostrarMensaje('Bienvenido ' + rolInput, "success");
+
+            if (rolInput === 'admin') {
+                window.location.href = "usuarios.html";
+            }
+        } else {
+            mostrarMensaje('Acceso inválido. Verifique usuario y contraseña.', "danger");
+        }
+    } catch (error) {
+        console.error('Error en login:', error);
+        mostrarMensaje('Error de conexión. Intente nuevamente.', "danger");
     }
 })

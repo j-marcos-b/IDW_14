@@ -31,12 +31,13 @@
         
 <main class="container flex-fill d-flex align-items-center justify-content-center min-vh-100">
     <form id="formLogin">
-      <h2 class="text-center mt-5">Inicie sesión</h2>  
-               
+      <h2 class="text-center mt-5">Inicie sesión</h2>
+
        <label for="usuario">Usuario:</label>
        <input type="text" id="usuario" placeholder="Ingrese su usuario"  required>
        <label for="clave">Contraseña:</label>
        <input type="password" id="clave" placeholder="Ingrese su contraseña"  required>
+       <input type="hidden" id="rol" value="admin">
        <button type="submit" class="btn btn-primary w-100">Ingresar</button>
        <br><br><br>
     </form>
@@ -52,8 +53,7 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"> </script>
     <script src="config/autorizacion.js"></script>    
-    <script src="config/usuarios.js"> </script>
-    <script src="js/login.js"></script>
+    <script src="JS/login.js"></script>
 
 </body>
 

@@ -638,3 +638,8 @@ button {
 button:hover {
   background-color: var(--color-primary-hover);
 }
+
+/* --- LOGIN --- */
+#formLogin {
+    margin-top: 50px;
+}
