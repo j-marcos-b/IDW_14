@@ -36,7 +36,7 @@ formLogin.addEventListener('submit', async function(event){
 
         if (response.ok) {
             const data = await response.json();
-            sessionStorage.setItem("accessToken", data.token);
+            sessionStorage.setItem("accessToken", data.accessToken);
             sessionStorage.setItem("usuarioLogueado", usuarioInput);
             sessionStorage.setItem("userRole", rolInput);
             mostrarMensaje('Bienvenido ' + rolInput, "success");
