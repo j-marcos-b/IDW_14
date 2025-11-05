@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IDW S.A</title>
+    <title>IDW S.A - Administración de Reservas</title>
     <link rel="icon" href="public/favicon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,81 +51,69 @@
                         <a class="nav-link text-center" id="enlace" href="profesionales.html">PROFESIONALES</a>
                     </li>
                     <li class="nav-item" id="nav-auth-item">
-                            <a class="nav-link text-center" id="enlace" href="login.html">LOGIN</a>
-                        </li>
+                        <a class="nav-link text-center" id="enlace" href="login.html">LOGIN</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 </header>
 
-<body>
+<main class="container py-5">
+    <section class="container-fluid">
+        <h1 class="mb-3">Administración de Reservas</h1>
 
-    <div class="container my-5">
-        <h1 class="mb-5">Reserva de Turnos Médicos</h1>
-        <form class="reserva_form row g-3">
-
-            <div class="col-md-6">
-                <label for="especialidad" class="form-label">Especialidad:</label>
-                <select id="especialidad" name="especialidad" class="form-select" required>
-                    <option value="">Seleccione una especialidad</option>
+        <!-- Filtros -->
+        <div class="row g-3 mb-4">
+            <div class="col-md-4">
+                <label for="filtroEspecialidad" class="form-label">Filtrar por Especialidad:</label>
+                <select id="filtroEspecialidad" class="form-select">
+                    <option value="">Todas</option>
                 </select>
             </div>
-
-            <div class="col-md-6">
-                <label for="obraSocial" class="form-label">Obra Social:</label>
-                <select id="obraSocial" name="obraSocial" class="form-select" required>
-                    <option value="">Seleccione una obra social</option>
+            <div class="col-md-4">
+                <label for="filtroMedico" class="form-label">Filtrar por Médico:</label>
+                <select id="filtroMedico" class="form-select">
+                    <option value="">Todos</option>
                 </select>
             </div>
-
-            <div class="col-md-6">
-                <label for="medico" class="form-label">Médicos:</label>
-                <select id="medico" name="medico" class="form-select" required>
-                    <option value="">Seleccione un médico</option>
-                </select>
+            <div class="col-md-4">
+                <label for="filtroFecha" class="form-label">Filtrar por Fecha:</label>
+                <input type="date" id="filtroFecha" class="form-control">
             </div>
+        </div>
 
-            <div class="col-md-6">
-                <label for="turnoDisponible" class="form-label">Turnos Disponibles:</label>
-                <select id="turnoDisponible" name="turnoDisponible" class="form-select" required>
-                    <option value="">Seleccione un turno disponible</option>
-                </select>
-            </div>
+        <!-- Tabla de Reservas -->
+        <div class="table-responsive">
+            <table class="table table-hover table-secondary table-bordered" id="reservasTable">
+                 <thead class="table-success">
+                     <tr>
+                        <th>Paciente</th>
+                        <th>DNI</th>
+                        <th>Médico</th>
+                        <th>Especialidad</th>
+                        <th>Obra Social</th>
+                        <th>Fecha y Hora</th>
+                        <th>Valor</th>
+                        <th>Acciones</th>
+                        </tr>
+                </thead>
+                    <tbody id="reservasTableBody">
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
 
-            <div class="col-md-6">
-                <label for="nombre" class="form-label">Nombre completo:</label>
-                <input type="text" id="nombre" name="nombre" class="form-control" required>
-            </div>
+<footer class="footer">
+    <p>&copy; 2025 - IDW S.A. Todos los derechos reservados.</p>
+</footer>
 
-            <div class="col-md-6">
-                <label for="dni" class="form-label">DNI:</label>
-                <input type="text" id="dni" name="dni" class="form-control" required>
-            </div>
-
-            <div class="col-md-6">
-                <label for="telefono" class="form-label">Teléfono de Contacto:</label>
-                <input type="tel" id="telefono" name="telefono" class="form-control" required>
-            </div>
-
-            <div class="col-md-6">
-                <label for="email" class="form-label">Correo electrónico:</label>
-                <input type="email" id="email" name="email" class="form-control" required>
-            </div>
-
-            <div class="col-12 d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary">Reservar Turno</button>
-            </div>
-        </form>
-    </div>
-    <footer class="footer">
-        <p>&copy; 2025 - IDW S.A. Todos los derechos reservados.</p>
-    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <script src="config/autorizacion.js"></script>
-    <script type="module" src="JS/reservas.js"></script>
+    <script type="module" src="JS/reservasAdmin.js"></script>
 </body>
 
 </html>
