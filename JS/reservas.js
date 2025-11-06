@@ -105,12 +105,23 @@ function calcularCosto(medicoId, obraSocialId) {
     const medico = medicos.find(m => m.id == medicoId);
     if (!medico) return 0;
     let costo = medico.valorConsulta;
-    // Descuentos por obra social (ejemplo)
+    // Descuentos por obra social
     const descuentos = {
-        8: 0.2, // PAMI 20%
-        5: 0.15, // IOMA 15%
+        1: 0.2, // Galeno 20%
+        2: 0.1, // Medicus 10%
+        3: 0.1, // Omint 10%
+        4: 0.2, // Swiss Medical 20%
+        5: 0.1, // IOMA 10%
+        6: 0.1, // Medifé 10%
+        7: 0.1, // OSPe 10%
+        8: 0.4, // PAMI 40%
         9: 0.1, // Apres 10%
-        // Otros sin descuento
+        10: 0.1, // OSECAC 10%
+        11: 0.1, // OSERA 10%
+        12: 0.1, // OSPLAD 10%
+        13: 0.3, // Luis Pasteur 30%
+        14: 0.3, // OSDE 30%
+        15: 0.1, // UPCN 10%
     };
     const descuento = descuentos[obraSocialId] || 0;
     return costo * (1 - descuento);
