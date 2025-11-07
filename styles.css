@@ -466,7 +466,7 @@ header {
   }
 }
 /* Estilos para la sección de novedades */
-#novedades h2, .text-primary {
+#novedades h2, #novedades, #docencia {
   text-align: center;
   color: #2C7873 !important;
   margin-bottom: 32px;
