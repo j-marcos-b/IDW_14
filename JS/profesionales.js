@@ -5,6 +5,15 @@ import {obrasSocialesIniciales} from '../config/obrasSociales.js';
 function inicializarLocalStorageSimple(){
     if (!localStorage.getItem('medicos')) {
         localStorage.setItem('medicos', JSON.stringify(staffInicial));
+    } else {
+        // Limpiar fotografias inválidas de médicos precargados
+        let medicos = JSON.parse(localStorage.getItem('medicos'));
+        medicos.forEach(medico => {
+            if (medico.id <= 10 && medico.fotografia) {
+                delete medico.fotografia;
+            }
+        });
+        localStorage.setItem('medicos', JSON.stringify(medicos));
     }
     if (!localStorage.getItem('especialidades')) {
         localStorage.setItem('especialidades', JSON.stringify(especialidadesIniciales));
@@ -51,14 +60,6 @@ function cargarProfesionales(filtroEspecialidad = '', filtroObraSocial = '') {
 
     contenedorProfesionales.innerHTML = '';
 
-    const imagenMap = {
-        "Dr. Knee": 'public/im7.jpg', "Dra. Liguori": 'public/im1.jpg',
-        "Dr. Pérez": 'public/im6.jpg', "Dra. Otero": 'public/im3.jpg',
-        "Dr. Bolívar": 'public/im9.jpg', "Dra. Sánchez": 'public/im4.png',
-        "Dra. Piatti": 'public/im8.png', "Dra. Porta": 'public/im10.jpg',
-        "Dr. Camacho": 'public/im5.jpg', "Dra. Martínez": 'public/im2.png'
-    };
-
     let medicosFiltrados = medicos;
 
     if (filtroEspecialidad) {
@@ -69,9 +70,17 @@ function cargarProfesionales(filtroEspecialidad = '', filtroObraSocial = '') {
         medicosFiltrados = medicosFiltrados.filter(medico => medico.obraSocial.includes(Number(filtroObraSocial)));
     }
 
+    const imagenMap = {
+        "Dr. Knee": 'public/im7.jpg', "Dra. Liguori": 'public/im1.jpg',
+        "Dr. Pérez": 'public/im6.jpg', "Dra. Otero": 'public/im3.jpg',
+        "Dr. Bolívar": 'public/im9.jpg', "Dra. Sánchez": 'public/im4.png',
+        "Dra. Piatti": 'public/im8.png', "Dra. Porta": 'public/im10.jpg',
+        "Dr. Camacho": 'public/im5.jpg', "Dra. Martínez": 'public/im2.png'
+    };
+
     medicosFiltrados.forEach(medico => {
         const nombreMedicoBase = medico.nombre.split(',')[0].trim();
-        const imagenSrc = imagenMap[nombreMedicoBase] || 'public/im5.jpg';
+        const imagenSrc = medico.fotografia || imagenMap[nombreMedicoBase] || 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=='; // Placeholder Base64 si no hay foto
 
         const especialidadNombre = especialidades.find(e => e.id == medico.especialidad)?.nombre || 'Desconocida';
         const obrasSocialesNombres = Array.isArray(medico.obraSocial) ? medico.obraSocial.map(id => obrasSociales.find(os => os.id === id)?.nombre || 'Desconocida').join(', ') : 'Desconocida';
