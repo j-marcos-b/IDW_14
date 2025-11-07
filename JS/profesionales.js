@@ -54,9 +54,9 @@ function cargarProfesionales(filtroEspecialidad = '', filtroObraSocial = '') {
     const imagenMap = {
         "Dr. Knee": 'public/im7.jpg', "Dra. Liguori": 'public/im1.jpg',
         "Dr. Pérez": 'public/im6.jpg', "Dra. Otero": 'public/im3.jpg',
-        "Dr. Bolívar": 'public/im9.jpg', "Dra. Sánchez": 'public/im4.jpg',
-        "Dra. Piatti": 'public/im8.jpg', "Dra. Porta": 'public/im10.jpg',
-        "Dr. Camacho": 'public/im5.jpg', "Dra. Martínez": 'public/im2.jpg'
+        "Dr. Bolívar": 'public/im9.jpg', "Dra. Sánchez": 'public/im4.png',
+        "Dra. Piatti": 'public/im8.png', "Dra. Porta": 'public/im10.jpg',
+        "Dr. Camacho": 'public/im5.jpg', "Dra. Martínez": 'public/im2.png'
     };
 
     let medicosFiltrados = medicos;
@@ -80,7 +80,7 @@ function cargarProfesionales(filtroEspecialidad = '', filtroObraSocial = '') {
         const cardHTML = `
             <div class="col">
                 <div class="card h-100 shadow-sm border-0 p-4 text-center">
-                    <img src="${imagenSrc}" alt="Imagen del ${medico.nombre}" class="card-img rounded-circle border border-3 mb-3 mx-auto d-block">
+                    <img src="${imagenSrc}" alt="Imagen del ${medico.nombre}" class="border border-3 mb-3 mx-auto d-block" style="width: 150px; height: 150px; object-fit: cover; border-radius: 0;">
                     <h5 class="card-title" style="color: var(--color-secondary)">${medico.nombre}</h5>
                     <p class="text-primary fw-bold mb-1">${especialidadNombre}</p>
                     <p class="text-muted mb-1">Matrícula: ${medico.matricula}</p>

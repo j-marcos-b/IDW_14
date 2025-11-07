@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (userRole === 'admin') {
             navLinks = `
-                <div class="d-flex">
+                <div class="d-flex justify-content-center align-items-center" style="gap: 15px;">
                     <a class="nav-link" id="enlace-usuarios" href="usuarios.html" title="Usuarios"><i class="bi bi-people" style="color: white;"></i></a>
                     <a class="nav-link" id="enlace-medicos" href="formAltaMedicos.html" title="Alta Médicos"><i class="bi bi-heart-pulse" style="color: white;"></i></a>
                     <a class="nav-link" id="enlace-especialidades" href="especialidades.html" title="Especialidades"><i class="bi bi-clipboard-data" style="color: white;"></i></a>

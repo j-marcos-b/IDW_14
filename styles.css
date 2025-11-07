@@ -168,6 +168,7 @@ header {
   gap: 30px;
   padding: 60px 20px;
   background-color: var(--color-white);
+  transition: all 0.5s ease-in-out;
 }
 
 .custom-card {
@@ -176,7 +177,7 @@ header {
   color: var(--color-text);
   border: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, var(--color-background) 0.3s ease;
+  transition: all 0.5s ease-in-out;
   text-align: center;
 }
 
@@ -267,7 +268,7 @@ header {
 #informacion h2 {
   text-align: center;
   font-size: 2rem;
-  color: var(--color-primary);
+  color: #2C7873;
   margin-bottom: 40px;
   font-weight: bold;
 }
@@ -464,6 +465,35 @@ header {
     height: 350px;
   }
 }
+/* Estilos para la sección de novedades */
+#novedades h2, .text-primary {
+  text-align: center;
+  color: #2C7873 !important;
+  margin-bottom: 32px;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+#novedades .card-img-top {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+/* Scroll animations */
+.hero, .features, #novedades, #investigacion {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;
+}
+
+.hero.visible, .features.visible, #novedades.visible, #investigacion.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Estilos para la sección de profesionales */
 #profesionales {
   max-width: 1200px;
@@ -476,7 +506,7 @@ header {
 
 #profesionales h2 {
   text-align: center;
-  color: var(--color-primary);
+  color: #2C7873;
   margin-bottom: 32px;
   font-size: 2.2rem;
   letter-spacing: 1px;
@@ -511,7 +541,7 @@ header {
   width: 120px;
   height: 120px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 0;
   border: 3px solid var(--color-primary);
   background: var(--color-background);
   margin-right: 12px;
@@ -642,4 +672,93 @@ button:hover {
 /* --- LOGIN --- */
 #formLogin {
     margin-top: 50px;
+}
+
+/* --- GESTIÓN DE MÉDICOS --- */
+@media (max-width: 768px) {
+    main.container.py-5 {
+        padding: 15px 5px;
+        margin-top: 120px;
+    }
+
+    .container-fluid {
+        padding: 0;
+    }
+
+    .table-responsive {
+        font-size: 0.75rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .table-responsive th,
+    .table-responsive td {
+        padding: 0.25rem;
+        white-space: nowrap;
+        min-width: 80px;
+    }
+
+    .table-responsive th {
+        font-size: 0.7rem;
+    }
+
+    .table-responsive td {
+        font-size: 0.65rem;
+    }
+
+    .modal-dialog.modal-lg {
+        max-width: 98vw;
+        margin: 5px auto;
+        height: 90vh;
+    }
+
+    .modal-content {
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    .modal-body {
+        padding: 0.5rem;
+        max-height: calc(90vh - 120px);
+        overflow-y: auto;
+    }
+
+    .modal-footer {
+        padding: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+        margin: 0.1rem;
+    }
+
+    h1.mb-3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+
+    #btnCrearMedico {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+
+    .form-label {
+        font-size: 0.8rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .form-control,
+    .form-select {
+        font-size: 0.8rem;
+        padding: 0.4rem;
+    }
+
+    .mb-3 {
+        margin-bottom: 0.8rem !important;
+    }
 }
