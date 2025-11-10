@@ -1,4 +1,4 @@
-// Scroll animation for sections on inicio.html
+// Animación Scroll para inicio.html
 document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('.hero, .features, #novedades, #investigacion');
 
