@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const accessToken = sessionStorage.getItem("accessToken");
     const usuarioLogueado = sessionStorage.getItem("usuarioLogueado");
     const userRole = sessionStorage.getItem("userRole");
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const logoutLink = document.getElementById('enlace-logout');
         if (logoutLink) {
-            logoutLink.addEventListener('click', function(event) {
+            logoutLink.addEventListener('click', function (event) {
                 event.preventDefault();
                 sessionStorage.removeItem("accessToken");
                 sessionStorage.removeItem("usuarioLogueado");

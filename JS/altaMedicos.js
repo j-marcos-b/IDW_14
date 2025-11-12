@@ -6,7 +6,9 @@ const listadoMedicosBody = document.querySelector('#listadoMedicos tbody');
 const medicoModalElement = document.getElementById('medicoModal');
 const medicoModal = new bootstrap.Modal(medicoModalElement);
 const formAltaMedicos = document.getElementById('altaMedicosForm');
-const inputNombre = document.getElementById('nombre');
+const inputFirstName = document.getElementById('firstName');
+const inputLastName = document.getElementById('lastName');
+const inputTitulo = document.getElementById('titulo');
 const inputMatricula = document.getElementById('matricula');
 const inputEspecialidad = document.getElementById('especialidad');
 const obraSocialCheckboxes = document.getElementById('obraSocialCheckboxes');
@@ -79,11 +81,12 @@ function actualizarTabla(){
     listadoMedicosBody.innerHTML = '';
 
     medicos.forEach((medico, index) => {
+        let nombreCompleto = medico.nombre || `${medico.titulo || ''} ${medico.firstName || ''} ${medico.lastName || ''}`.trim();
         let especialidadNombre = especialidades.find(e => e.id === medico.especialidad)?.nombre || 'Desconocida';
         let obrasSocialesNombres = Array.isArray(medico.obraSocial) ? medico.obraSocial.map(id => obrasSociales.find(os => os.id === id)?.nombre || 'Desconocida').join(', ') : 'Desconocida';
         let fila = document.createElement('tr');
         fila.innerHTML = `
-            <td>${medico.nombre}</td>
+            <td>${nombreCompleto}</td>
             <td>${medico.matricula}</td>
             <td>${especialidadNombre}</td>
             <td>${obrasSocialesNombres}</td>
@@ -105,7 +108,8 @@ function actualizarFilaEnTabla(index, medicoActualizado) {
         let obrasSociales = JSON.parse(localStorage.getItem('obrasSociales')) || obrasSocialesIniciales;
         let especialidadNombre = especialidades.find(e => e.id === medicoActualizado.especialidad)?.nombre || 'Desconocida';
         let obrasSocialesNombres = Array.isArray(medicoActualizado.obraSocial) ? medicoActualizado.obraSocial.map(id => obrasSociales.find(os => os.id === id)?.nombre || 'Desconocida').join(', ') : 'Desconocida';
-        filas[index].cells[0].textContent = medicoActualizado.nombre;
+        let nombreCompleto = medicoActualizado.nombre || `${medicoActualizado.titulo || ''} ${medicoActualizado.firstName || ''} ${medicoActualizado.lastName || ''}`.trim();
+        filas[index].cells[0].textContent = nombreCompleto;
         filas[index].cells[1].textContent = medicoActualizado.matricula;
         filas[index].cells[2].textContent = especialidadNombre;
         filas[index].cells[3].textContent = obrasSocialesNombres;
@@ -119,9 +123,10 @@ function agregarFilaATabla(nuevoMedico) {
     let obrasSociales = JSON.parse(localStorage.getItem('obrasSociales')) || obrasSocialesIniciales;
     let especialidadNombre = especialidades.find(e => e.id === nuevoMedico.especialidad)?.nombre || 'Desconocida';
     let obrasSocialesNombres = Array.isArray(nuevoMedico.obraSocial) ? nuevoMedico.obraSocial.map(id => obrasSociales.find(os => os.id === id)?.nombre || 'Desconocida').join(', ') : 'Desconocida';
+    let nombreCompleto = `${nuevoMedico.titulo} ${nuevoMedico.firstName} ${nuevoMedico.lastName}`;
     const fila = document.createElement('tr');
     fila.innerHTML = `
-        <td>${nuevoMedico.nombre}</td>
+        <td>${nombreCompleto}</td>
         <td>${nuevoMedico.matricula}</td>
         <td>${especialidadNombre}</td>
         <td>${obrasSocialesNombres}</td>
@@ -143,7 +148,9 @@ function eliminarFilaDeTabla(index) {
 }
 
 function crearMedico() {
-    let nombre = inputNombre.value.trim();
+    let firstName = inputFirstName.value.trim();
+    let lastName = inputLastName.value.trim();
+    let titulo = inputTitulo.value;
     let matricula = inputMatricula.value.trim();
     let especialidad = Number(inputEspecialidad.value);
     let descripcion = inputDescripcion.value.trim();
@@ -156,7 +163,7 @@ function crearMedico() {
     let checkboxes = obraSocialCheckboxes.querySelectorAll('input[type="checkbox"]:checked');
     let obraSocial = Array.from(checkboxes).map(cb => Number(cb.value));
 
-    if (!nombre || !matricula || !especialidad || obraSocial.length === 0 || !descripcion || !fotografia || !valorConsulta || !telefono || !email) {
+    if (!firstName || !lastName || !titulo || !matricula || !especialidad || obraSocial.length === 0 || !descripcion || !fotografia || !valorConsulta || !telefono || !email) {
         alert('Por favor, complete todos los campos requeridos');
         return;
     }
@@ -166,7 +173,7 @@ function crearMedico() {
     reader.onload = function(e) {
         let fotografiaBase64 = e.target.result;
         let medicos = JSON.parse(localStorage.getItem('medicos')) || [];
-        const nuevoMedico = { id: Date.now(), nombre, matricula, especialidad, descripcion, obraSocial, fotografia: fotografiaBase64, valorConsulta, telefono, email };
+        const nuevoMedico = { id: Date.now(), firstName, lastName, titulo, matricula, especialidad, descripcion, obraSocial, fotografia: fotografiaBase64, valorConsulta, telefono, email };
         medicos.push(nuevoMedico);
         localStorage.setItem('medicos', JSON.stringify(medicos));
         agregarFilaATabla(nuevoMedico);
@@ -181,7 +188,9 @@ function editarMedico(index) {
     let medico = medicos[index];
 
     medicoId.value = index;
-    inputNombre.value = medico.nombre;
+    inputFirstName.value = medico.firstName;
+    inputLastName.value = medico.lastName;
+    inputTitulo.value = medico.titulo;
     inputMatricula.value = medico.matricula;
     inputEspecialidad.value = medico.especialidad;
     // Marcar checkboxes de obras sociales
@@ -201,7 +210,9 @@ function editarMedico(index) {
 
 function actualizarMedico() {
     const index = parseInt(medicoId.value);
-    let nombre = inputNombre.value.trim();
+    let firstName = inputFirstName.value.trim();
+    let lastName = inputLastName.value.trim();
+    let titulo = inputTitulo.value;
     let matricula = inputMatricula.value.trim();
     let especialidad = Number(inputEspecialidad.value);
     let descripcion = inputDescripcion.value.trim();
@@ -214,13 +225,13 @@ function actualizarMedico() {
     let checkboxes = obraSocialCheckboxes.querySelectorAll('input[type="checkbox"]:checked');
     let obraSocial = Array.from(checkboxes).map(cb => Number(cb.value));
 
-    if (!nombre || !matricula || !especialidad || obraSocial.length === 0 || !descripcion || !valorConsulta || !telefono || !email) {
+    if (!firstName || !lastName || !titulo || !matricula || !especialidad || obraSocial.length === 0 || !descripcion || !valorConsulta || !telefono || !email) {
         alert('Por favor, complete todos los campos requeridos');
         return;
     }
 
     let medicos = JSON.parse(localStorage.getItem('medicos')) || [];
-    const medicoActualizado = { id: medicos[index].id, nombre, matricula, especialidad, descripcion, obraSocial, fotografia: medicos[index].fotografia, valorConsulta, telefono, email };
+    const medicoActualizado = { id: medicos[index].id, firstName, lastName, titulo, matricula, especialidad, descripcion, obraSocial, fotografia: medicos[index].fotografia, valorConsulta, telefono, email };
 
     if (fotografia) {
         let reader = new FileReader();

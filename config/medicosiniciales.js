@@ -1,7 +1,9 @@
 export const staffInicial = [
   {
     id: 1,
-    nombre: "Dr. Knee, Hernán",
+    firstName: "Hernán",
+    lastName: "Knee",
+    titulo: "Dr.",
     matricula: "45713",
     especialidad: 1, // ID de especialidad
     descripcion: "Especialista en Clínica Médica con amplia experiencia en atención primaria.",
@@ -12,7 +14,9 @@ export const staffInicial = [
   },
   {
     id: 2,
-    nombre: "Dra. Liguori, Martina",
+    firstName: "Martina",
+    lastName: "Liguori",
+    titulo: "Dra.",
     matricula: "57143",
     especialidad: 1,
     descripcion: "Profesional dedicada a la Clínica Médica, enfocada en la salud preventiva.",
@@ -23,7 +27,9 @@ export const staffInicial = [
   },
   {
     id: 3,
-    nombre: "Dr. Pérez, Luis",
+    firstName: "Luis",
+    lastName: "Pérez",
+    titulo: "Dr.",
     matricula: "11773",
     especialidad: 2,
     descripcion: "Cardiólogo experto en diagnóstico y tratamiento de enfermedades cardíacas.",
@@ -34,7 +40,9 @@ export const staffInicial = [
   },
   {
     id: 4,
-    nombre: "Dra. Otero, Hortensia",
+    firstName: "Hortensia",
+    lastName: "Otero",
+    titulo: "Dra.",
     matricula: "34704",
     especialidad: 2,
     descripcion: "Especialista en Cardiología con enfoque en pacientes geriátricos.",
@@ -45,7 +53,9 @@ export const staffInicial = [
   },
   {
     id: 5,
-    nombre: "Dr. Bolívar, Héctor Ignacio",
+    firstName: "Héctor Ignacio",
+    lastName: "Bolívar",
+    titulo: "Dr.",
     matricula: "50850",
     especialidad: 3,
     descripcion: "Ginecólogo con especialización en obstetricia y salud reproductiva.",
@@ -56,7 +66,9 @@ export const staffInicial = [
   },
   {
     id: 6,
-    nombre: "Dra. Sánchez, Julia",
+    firstName: "Julia",
+    lastName: "Sánchez",
+    titulo: "Dra.",
     matricula: "12936",
     especialidad: 3,
     descripcion: "Profesional en Ginecología dedicada a la atención integral de la mujer.",
@@ -67,7 +79,9 @@ export const staffInicial = [
   },
   {
     id: 7,
-    nombre: "Dra. Piatti, Marcela",
+    firstName: "Marcela",
+    lastName: "Piatti",
+    titulo: "Dra.",
     matricula: "77354",
     especialidad: 4,
     descripcion: "Traumatóloga especializada en lesiones deportivas y ortopedia.",
@@ -78,7 +92,9 @@ export const staffInicial = [
   },
   {
     id: 8,
-    nombre: "Dra. Porta, Luisina",
+    firstName: "Luisina",
+    lastName: "Porta",
+    titulo: "Dra.",
     matricula: "08364",
     especialidad: 4,
     descripcion: "Especialista en Traumatología con experiencia en cirugía reconstructiva.",
@@ -89,7 +105,9 @@ export const staffInicial = [
   },
   {
     id: 9,
-    nombre: "Dr. Camacho, Cristóbal",
+    firstName: "Cristóbal",
+    lastName: "Camacho",
+    titulo: "Dr.",
     matricula: "63861",
     especialidad: 5,
     descripcion: "Pediatra comprometido con la salud infantil y el desarrollo temprano.",
@@ -100,7 +118,9 @@ export const staffInicial = [
   },
   {
     id: 10,
-    nombre: "Dra. Martínez, Ernestina",
+    firstName: "Ernestina",
+    lastName: "Martínez",
+    titulo: "Dra.",
     matricula: "55048",
     especialidad: 5,
     descripcion: "Especialista en Pediatría con enfoque en nutrición y crecimiento.",

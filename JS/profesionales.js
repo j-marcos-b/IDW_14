@@ -79,7 +79,8 @@ function cargarProfesionales(filtroEspecialidad = '', filtroObraSocial = '') {
     };
 
     medicosFiltrados.forEach(medico => {
-        const nombreMedicoBase = medico.nombre.split(',')[0].trim();
+        const nombreCompleto = medico.nombre || `${medico.titulo || ''} ${medico.firstName || ''} ${medico.lastName || ''}`.trim();
+        const nombreMedicoBase = medico.nombre ? nombreCompleto.split(',')[0].trim() : `${medico.titulo} ${medico.lastName}`;
         const imagenSrc = medico.fotografia || imagenMap[nombreMedicoBase] || 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=='; // Placeholder Base64 si no hay foto
 
         const especialidadNombre = especialidades.find(e => e.id == medico.especialidad)?.nombre || 'Desconocida';
@@ -89,8 +90,8 @@ function cargarProfesionales(filtroEspecialidad = '', filtroObraSocial = '') {
         const cardHTML = `
             <div class="col">
                 <div class="card h-100 shadow-sm border-0 p-4 text-center">
-                    <img src="${imagenSrc}" alt="Imagen del ${medico.nombre}" class="border border-3 mb-3 mx-auto d-block" style="width: 150px; height: 150px; object-fit: cover; border-radius: 0;">
-                    <h5 class="card-title" style="color: var(--color-secondary)">${medico.nombre}</h5>
+                    <img src="${imagenSrc}" alt="Imagen del ${nombreCompleto}" class="border border-3 mb-3 mx-auto d-block" style="width: 150px; height: 150px; object-fit: cover; border-radius: 0;">
+                    <h5 class="card-title" style="color: var(--color-secondary)">${nombreCompleto}</h5>
                     <p class="text-primary fw-bold mb-1">${especialidadNombre}</p>
                     <p class="text-muted mb-1">Matrícula: ${medico.matricula}</p>
                     <p class="text-body mb-1">${descripcion}</p>

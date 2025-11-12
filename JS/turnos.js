@@ -35,7 +35,8 @@ function cargarMedicos(){
     medicos.forEach(medico => {
         let option = document.createElement('option');
         option.value = String(medico.id);
-        option.textContent = medico.nombre;
+        let nombreCompleto = medico.nombre || `${medico.titulo || ''} ${medico.firstName || ''} ${medico.lastName || ''}`.trim();
+        option.textContent = nombreCompleto;
         inputMedico.appendChild(option);
     });
 }
@@ -46,7 +47,8 @@ function actualizarTabla(){
     listadoTurnosBody.innerHTML = '';
 
     turnos.forEach((turno, index) => {
-        let medicoNombre = turno.medico ? medicos.find(m => m.id === turno.medico)?.nombre || 'Desconocido' : 'Sin asignar';
+        let medico = turno.medico ? medicos.find(m => m.id === turno.medico) : null;
+        let medicoNombre = medico ? (medico.nombre || `${medico.titulo || ''} ${medico.firstName || ''} ${medico.lastName || ''}`.trim()) : 'Sin asignar';
         let fila = document.createElement('tr');
         fila.innerHTML = `
             <td>${turno.id}</td>
@@ -66,7 +68,8 @@ function actualizarFilaEnTabla(index, turnoActualizado) {
     const filas = listadoTurnosBody.querySelectorAll('tr');
     if (filas[index]) {
         let medicos = JSON.parse(localStorage.getItem('medicos')) || [];
-        let medicoNombre = turnoActualizado.medico ? medicos.find(m => m.id === turnoActualizado.medico)?.nombre || 'Desconocido' : 'Sin asignar';
+        let medico = turnoActualizado.medico ? medicos.find(m => m.id === turnoActualizado.medico) : null;
+        let medicoNombre = medico ? (medico.nombre || `${medico.titulo || ''} ${medico.firstName || ''} ${medico.lastName || ''}`.trim()) : 'Sin asignar';
         filas[index].cells[1].textContent = medicoNombre;
         filas[index].cells[2].textContent = turnoActualizado.fecha;
         filas[index].cells[3].textContent = turnoActualizado.hora;
@@ -75,7 +78,8 @@ function actualizarFilaEnTabla(index, turnoActualizado) {
 
 function agregarFilaATabla(nuevoTurno) {
     let medicos = JSON.parse(localStorage.getItem('medicos')) || [];
-    let medicoNombre = nuevoTurno.medico ? medicos.find(m => m.id === nuevoTurno.medico)?.nombre || 'Desconocido' : 'Sin asignar';
+    let medico = nuevoTurno.medico ? medicos.find(m => m.id === nuevoTurno.medico) : null;
+    let medicoNombre = medico ? (medico.nombre || `${medico.titulo || ''} ${medico.firstName || ''} ${medico.lastName || ''}`.trim()) : 'Sin asignar';
     const fila = document.createElement('tr');
     fila.innerHTML = `
         <td>${nuevoTurno.id}</td>

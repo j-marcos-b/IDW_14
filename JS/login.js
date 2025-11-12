@@ -36,13 +36,26 @@ formLogin.addEventListener('submit', async function(event){
 
         if (response.ok) {
             const data = await response.json();
-            sessionStorage.setItem("accessToken", data.accessToken);
-            sessionStorage.setItem("usuarioLogueado", usuarioInput);
-            sessionStorage.setItem("userRole", rolInput);
-            mostrarMensaje('Bienvenido ' + rolInput, "success");
-
-            if (rolInput === 'admin') {
-                window.location.href = "usuarios.html";
+            // Obtener detalles del usuario para verificar el rol
+            try {
+                const userResponse = await fetch(`https://dummyjson.com/users/${data.id}`);
+                if (userResponse.ok) {
+                    const userData = await userResponse.json();
+                    if (userData.role === 'admin') {
+                        sessionStorage.setItem("accessToken", data.accessToken);
+                        sessionStorage.setItem("usuarioLogueado", usuarioInput);
+                        sessionStorage.setItem("userRole", 'admin');
+                        mostrarMensaje('Bienvenido administrador', "success");
+                        window.location.href = "usuarios.html";
+                    } else {
+                        mostrarMensaje('Solo los administradores pueden loguearse.', "danger");
+                    }
+                } else {
+                    mostrarMensaje('Error al verificar el rol del usuario.', "danger");
+                }
+            } catch (error) {
+                console.error('Error al obtener usuario:', error);
+                mostrarMensaje('Error de conexión. Intente nuevamente.', "danger");
             }
         } else {
             mostrarMensaje('Acceso inválido. Verifique usuario y contraseña.', "danger");

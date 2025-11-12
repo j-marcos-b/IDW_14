@@ -98,8 +98,20 @@
                 <form id="altaMedicosForm">
                     <input type="hidden" id="medicoId">
                     <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre Completo</label>
-                        <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre completo" required>
+                        <label for="firstName" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="Ingrese nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lastName" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Ingrese apellido" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="titulo" class="form-label">Título</label>
+                        <select class="form-select" id="titulo" required>
+                            <option value="">Seleccione título</option>
+                            <option value="Dr.">Dr.</option>
+                            <option value="Dra.">Dra.</option>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label for="matricula" class="form-label">Matrícula</label>

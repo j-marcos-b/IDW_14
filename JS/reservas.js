@@ -81,7 +81,8 @@ function cargarMedicos(especialidadId) {
     medicosFiltrados.forEach(medico => {
         const option = document.createElement('option');
         option.value = medico.id;
-        option.textContent = medico.nombre;
+        let nombreCompleto = medico.nombre || `${medico.titulo || ''} ${medico.firstName || ''} ${medico.lastName || ''}`.trim();
+        option.textContent = nombreCompleto;
         selectMedico.appendChild(option);
     });
     // Reset turnos disponibles cuando cambia médico
@@ -138,12 +139,17 @@ function mostrarResumen(reserva) {
     const obraSocial = obrasSociales.find(o => o.id == reserva.obraSocial);
     const turno = turnos.find(t => t.id == reserva.turno);
 
+    let nombreMedico = 'Desconocido';
+    if (medico) {
+        nombreMedico = medico.nombre || `${medico.titulo || ''} ${medico.firstName || ''} ${medico.lastName || ''}`.trim();
+    }
+
     const resumen = `
 Reserva Confirmada
 
 Paciente: ${reserva.nombre}
 DNI: ${reserva.documento}
-Médico: ${medico ? medico.nombre : 'Desconocido'}
+Médico: ${nombreMedico}
 Especialidad: ${especialidad ? especialidad.nombre : 'Desconocida'}
 Obra Social: ${obraSocial ? obraSocial.nombre : 'Sin obra social'}
 Fecha y Hora: ${turno ? `${turno.fecha} ${turno.hora}` : 'Desconocido'}

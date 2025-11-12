@@ -41,7 +41,8 @@ function cargarFiltros() {
     medicos.forEach(medico => {
         const option = document.createElement('option');
         option.value = medico.id;
-        option.textContent = medico.nombre;
+        let nombreCompleto = medico.nombre || `${medico.titulo || ''} ${medico.firstName || ''} ${medico.lastName || ''}`.trim();
+        option.textContent = nombreCompleto;
         filtroMedico.appendChild(option);
     });
 }
@@ -82,11 +83,16 @@ function cargarReservas(filtros = {}) {
         const obraSocial = obrasSociales.find(o => o.id == reserva.obraSocial);
         const turno = turnos.find(t => t.id == reserva.turno);
 
+        let nombreMedico = 'Desconocido';
+        if (medico) {
+            nombreMedico = medico.nombre || `${medico.titulo || ''} ${medico.firstName || ''} ${medico.lastName || ''}`.trim();
+        }
+
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${reserva.nombre}</td>
             <td>${reserva.documento}</td>
-            <td>${medico ? medico.nombre : 'Desconocido'}</td>
+            <td>${nombreMedico}</td>
             <td>${especialidad ? especialidad.nombre : 'Desconocida'}</td>
             <td>${obraSocial ? obraSocial.nombre : 'Sin obra social'}</td>
             <td>${turno ? `${turno.fecha} ${turno.hora}` : 'Desconocido'}</td>
